@@ -1,7 +1,7 @@
-text = 'Hola mundooooooooo'; // Cadena de texto
-n1 = 20; // Number
-boo1 = true; // Booleano 1
-boo2 = false; // Booleano 0
+let text = 'Hola mundooooooooo'; // Cadena de texto
+let n1 = 20; // Number
+let boo1 = true; // Booleano 1
+let boo2 = false; // Booleano 0
 
 // Declarar variables  
 
