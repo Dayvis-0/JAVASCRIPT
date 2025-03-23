@@ -7,6 +7,8 @@ let nume1 = 1;
 let nume2 = 2;
 let nume3 = '3';
 
+/* Operadores de comparacion: */
+
 iqual = nume1 == nume2; /* Igualdadad | Compara valores, no tipos*/
 iquals = nume1 === nume2; /* Igualdad estricta | Compara valor y tipo*/
 iqualstri = nume1 == nume3; 
@@ -16,7 +18,7 @@ desis = nume1 !== nume2; /* Desigualdad estricta | Compara valores y tipos*/
 desistri = nume1 != nume3;
 desistri1 = nume1 !== nume3;
 
-
+/* Operadores logicos */
 
 console.log(`Primer numero: ${nume1}, segundo numero: ${nume2} son iguales?: ${iqual}`);
 console.log(`Primer numero: ${nume1}, segundo numero: ${nume2} son estrictamente iguales?: ${iquals}`);
