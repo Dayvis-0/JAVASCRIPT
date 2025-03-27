@@ -1,3 +1,6 @@
+let nomb1, fra1, tex1, tex2, edad, mensa1, mensa2;
+let n1, n2, frase, fra2, fra3, mensa, nomb, mensa10;
+
 nomb = 'Dayvis';
 nomb1 = 'Maria';
 fra1 = 'Hello '
@@ -24,6 +27,8 @@ mensa2 = `
     </div>
 `; /*Tambien se puede esccibir codigo HTML dentro del backtick*/
 
+mensa10 = 'Jeje';
+
 console.log(frase);
 console.log(fra1);
 console.log(fra2);
@@ -32,3 +37,4 @@ console.log(fra3);
 console.log(mensa1);
 document.write(mensa1);
 document.write(mensa2);
+console.log(mensa10)
