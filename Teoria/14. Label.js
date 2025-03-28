@@ -8,6 +8,9 @@ for1:
 for (let j in n2) {
     if (j == 2) {
         for (let k of n1 ) {
+            if (k == 'Tres') {
+                continue for1;
+            };
             console.log(k);
         };
     }
