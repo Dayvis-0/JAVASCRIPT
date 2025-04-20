@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+
+    <head>
+        <title>Atributos globales</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Sen&siplay=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../normalize.css">
+    </head>
+
+    <body>
+        <h1 class="texto1">tabindex</h1>
+        <a class="tab1 texto">Primero</a>
+        <a class="tab2 texto">Segundo</a>
+        <a class="tab3 texto">Tercero</a>
+        <h1 class="texto texto1">contentEditable</h1>
+        <h2 class="titulo1 texto">Editable</h2>
+        <h2 class="titulo2 texto">No editable</h2>
+        <div class="titulo3">
+            <h2 class="titulo texto">Editable</h2> <span class="titulo4"><h2 class="texto">Hereda editable</h2></span>
+        </div>
+        <h1 class="texto texto1">hidden</h1>
+        <div class="cont"><div class="caja" hidden=""></div></div>
+        <h1 class="texto texto1">title</h1>
+        <div class="cont title"><div class="caja1"></div></div>
+        <script src="29. Atributos globales.js"></script>
+        <style>
+            body {
+                background: radial-gradient(circle, #fff, #bbb);
+            }
+
+            .texto {
+                font-family: 'Sens', sans-serif;
+                text-align: center;
+                color: #00f;
+            }
+
+            .texto1 {
+                color: #f00;
+                text-align: center;
+            }
+
+            .cont {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .caja, .caja1 {
+                height: 100px;
+                width: 100px;
+                background-color: #55f;
+            }
+        </style>
+    </body>
+
+</html>
