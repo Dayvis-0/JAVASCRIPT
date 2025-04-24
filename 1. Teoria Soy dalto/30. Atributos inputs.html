@@ -10,7 +10,7 @@
     </head>
 
     <body>
-
+        <h1>Atributos inputs</h1>
         <input type="date">
         <h2 class="texto">className</h2>
         <input type="text" class="input-normal"><br><br>
@@ -26,16 +26,81 @@
         <div id="t_date"></div>
         <h2 class="texto">Type number</h2>
         <input type="" class="input-normal-4"><br><br>
-        <div id="t_numbre"></div>
+        <div id="t_number"></div>
         <h2 class="texto">Type password</h2>
         <input type="" class="input-normal-5"><br><br>
         <div id="t_pass"></div>
+        <h2 class="texto">Accept</h2>
+        <h2 class="texto">image/png</h2>
+        <input type="file" class="input-normal-6"><br><br>
+        <div id="t_acc_img"></div>
+        <h2 class="texto">image/gif</h2>
+        <input type="file" class="input-normal-7"><br><br>
+        <div id="t_acc_gif"></div>
+        <h2 class="texto">video/mp4</h2>
+        <input type="file" class="input-normal-8"><br><br>
+        <div id="t_acc_video"></div>
+        <div id="t_acc_gif"></div>
+        <h2 class="texto">form</h2>
+        <div class="container-help">
+            <h3 class="" >Para ayuda</h3>
+            <!-- Aqui al usar form la pagina siempre se actualiza, ya que se envia una
+              peticion al seridor y la pagina se refresca-->
+            <form id="formulario">
+                <input type="text">
+                <input type="submit">
+            </form>
+            <!-- Para que funcione con un input: se le debe de agregar como atributo form, junto con nombre de id -->
+            <input type="text">
+            <input type="submit" form="formulario">
+        </div>
+        <input type="file" class="input-normal-8"><br><br>
+        <div id="t_acc_video"></div>
+        <h2 class="texto">minLength</h2>
+        <div class="container-help">
+            <form>
+                <input type="text" class="input-normal-9">
+                <input type="submit">
+                <div id="t_minlen"></div>
+            </form>
+        </div>
+        <h2 class="texto">minLength con setAttribute</h2>
+        <div class="container-help">
+            <form>
+                <input type="text" class="input-normal-10">
+                <input type="submit">
+                <div id="t_minlen_att"></div>
+            </form>
+        </div>
+        <h2 class="texto">placeholder</h2>
+        <input type="text" class="input-normal-11">
+        <div id="t_place"></div>
         <script src="30. Atributos inputs.js"></script>
         <style>
+            body {
+                background: #bbb;
+            }
+
             .texto {
-                color: #fd0;
+                color: #00f;
                 text-align: center;
             }
+
+            h1 {
+                text-align: center;
+                color: #aaf;
+            }
+
+            h3 {
+                width: 100px;
+            }
+
+            .container-help {
+                display: flex;
+                justify-content: center;
+                height: 100px;
+                padding: 5px;
+            } 
         </style>
     </body>
 
