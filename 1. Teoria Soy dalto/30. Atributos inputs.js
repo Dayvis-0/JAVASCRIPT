@@ -40,7 +40,7 @@ r8_acc_gif.textContent = `Accept ${input7.accept = "image/gif"}`;
 r9_acc_video.textContent = `Accept ${input8.accept = "video/mp4"}`;
 /* minLength - longitud minima | Especifica la longitud minima de los datos de texto*/
 r10_minlen.textContent = `minLenght ${input10.minLength = 3}`;
-//  minlength  con setAtribute
+//  minlength  con setAtribute 
 r11_minlenatt.textContent = `minLenght ${input11.setAttribute("minlength", "3")}`;
 // placeholder - marcador de posicion | Define el texto que se muestra en un control de formulario cuando este no tiene ningun valor
 r12_place.textContent = `placeholder ${input12.placeholder = "hola mundo"}`;
