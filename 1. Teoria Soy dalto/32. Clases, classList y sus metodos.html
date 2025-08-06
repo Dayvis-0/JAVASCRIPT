@@ -8,24 +8,48 @@
         <link href="https://fonts.googleapis.com/css2?family=Sen&siplay=swap" rel="stylesheet">
     </head>
     <body>
-        <h1 class="title1">Element.add(String[,String])</h1>
-        <h1 class="titleone">Element to modify 1</h1>
-        <h1 class="title2">Element.remove(String[,String])</h1>
-        <h1 class="titletwo big">Element to modify 2</h1>
-        <h1 class="title2">Element.item(String[,String])</h1>
-        <h1 class="titlethree one two tree">Element to modify 3</h1>
+        <h1 class="title">Element.add(String[,String])</h1>
+        <h2 class="titleone text">Element to modify 1</h2>
         <div class="show"></div>
-        <h1 class="title2">Element.contains(String[,String])</h1>
-        <h1 class="titlefour one two tree">Element to modify 4</h1>
-        <div class="show1"></div>
+        <h1 class="title">Element.remove(String[,String])</h1>
+        <h2 class="titletwo big text">Element to modify 2</h2>
+        <div class="show1 show"></div>
+        <h1 class="title">Element.item(String[,String])</h1>
+        <h2 class="titlethree one two tree text">Element to modify 3</h2>
+        <div class="show2 show"></div>
+        <h1 class="title">Element.contains(String[,String])</h1>
+        <h2 class="titlefour one two tree text">Element to modify 4</h2>
+        <div class="show3 show"></div>
+        <h1 class="title">Element.toggle(String[,String]) - sin segundo argumento</h1>
+        <h2 class="titlefive one text">Element to modify 5</h2>
+        <div class="show4 show"></div>
+        <h1 class="title">Element.toggle(String[,String]) - sin segundo argumento</h1>
+        <h2 class="titlesix one text">Element to modify 6</h2>
+        <div class="show5 show"></div>
+        <h1 class="title">Element.toggle(String[,String]) - con segundo argumento true</h1>
+        <h2 class="titleseven one text">Element to modify 7</h2>
+        <div class="show6 show"></div>
+        <h1 class="title">Element.toggle(String[,String]) - con segundo argumento false</h1>
+        <h2 class="titleeight one text">Element to modify 8</h2>
+        <div class="show7 show"></div>
+        <h1 class="title">Element.replace(oldClass, newClass)</h1>
+        <h2 class="titlenine hola text">Element to modify 9</h2>
+        <div class="show8 show"></div>
         <script src="32. Clases, classList y sus metodos.js"></script>
         <style>
             :root {
-                color-scheme: light dark;
+                background: #4e4e4e;
+                padding: 100px;
             }
-
-            .big, .show, .show1 {
-                font-size: 100px;
+            .title, .text {
+                text-align: center;
+                color: #fff;
+            }
+            .show {
+                background: #59f;
+                text-align: center;
+                color: #000;
+                font-size: 25px;
             }
         </style>
     </body>

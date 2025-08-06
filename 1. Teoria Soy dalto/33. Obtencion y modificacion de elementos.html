@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Obtencion y modificacion de elementos</title>
+    </head>
+    <body>
+        <h1 class="title">Text content 1</h1>
+        <div class="element text">Hello <b>world</b></div>
+        <div class="show text showYou"></div>
+        <h1 class="title">Text content 2</h1>
+        <div class="element1 text">Hello <b style="visibility: hidden;">world</b></div>
+        <div class="show1 text showYou"></div>
+        <h1 class="title">Inner HTML</h1>
+        <div class="element2 text">Hello <b style="visibility: hidden;">world</b></div>
+        <div class="show2 text showYou"></div>
+        <h1 class="title">Outer HTML</h1>
+        <div class="element3 text">Hello <b style="visibility: hidden;">world</b></div>
+        <div class="show3 text showYou"></div>
+        <script src="33. Obtencion y modificacion de elementos.js"></script>
+        <style>
+            :root {
+                color-scheme: light dark;
+                padding: 100px;
+            }
+
+            .showYou {
+                background: #567;
+            }
+
+            .title {
+                text-align: center;
+            }
+
+            .text{
+                font-size: 25px;
+                text-align: center;
+            }   
+        </style>
+    </body>
+</html>
