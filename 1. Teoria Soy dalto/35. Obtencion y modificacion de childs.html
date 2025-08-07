@@ -7,21 +7,40 @@
         <title>Obtencion y modificacion de childs</title>
     </head>
     <body>
+        <h1 class="title"> firstChild and lastChild</h1>
         <div class="container">
-            <h2 class="title">She</h2>
+            <h2 class="text">She</h2>
             <h4 class="text">She</h4>
             <p class="text">Parraf</p>
         </div>
+        <div class="show text"></div><br>
+        <div class="show1 text"></div>
+        <h1 class="title"> firstElementChild and lastElementChild</h1>
+        <div class="show2 text"></div><br>
+        <div class="show3 text"></div>
+        <h1 class="title"> childNodes</h1>
+        <div class="show4 text"></div><br>
+        <h1 class="title"> children</h1>
+        <div class="show5 text"></div><br>
         <style>
             :root {
                 color-scheme: light dark;
                 padding: 100px;
             }
 
-            .title, .text {
+            .title, .text, .show {
                 text-align: center;
                 font-size: 25px;
             }
+            
+            .show, .show1 {
+                background: #459;
+            }
+
+            .title {
+                background: #f00;
+            }
         </style>
+        <script src="35. Obtencion y modificacion de childs.js"></script>
     </body>
 </html>
