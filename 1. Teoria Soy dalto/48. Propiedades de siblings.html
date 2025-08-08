@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Propiedades de sibling</title>
+    </head>
+    <body>
+        <h1 class="title">nextSibling</h1>
+        <div class="container">
+            <h1 class="one text">One</h1>
+            <h2 class="two text">Two</h2>
+            <h3 class="three text">Three</h3>
+        </div>
+        <div class="show"></div>
+        <h1 class="title">previousSibling</h1>
+        <div class="container">
+            <h1 class="one text">One</h1>
+            <h2 class="two1 text">Two</h2>
+            <h3 class="three text">Three</h3>
+        </div>
+        <div class="show1"></div>
+        <h1 class="title">nextElementSibling</h1>
+        <div class="container">
+            <h1 class="one text">One</h1>
+            <h2 class="two2 text">Two</h2>
+            <h3 class="three text">Three</h3>
+        </div>
+        <div class="show2"></div>
+        <h1 class="title">previousElementSibling</h1>
+        <div class="container">
+            <h1 class="one text">One</h1>
+            <h2 class="two3 text">Two</h2>
+            <h3 class="three text">Three</h3>
+        </div>
+        <div class="show3"></div>
+        <script src="48. Propiedades de siblings.js"></script>
+        <style>
+            :root {
+                color-scheme: light dark;
+                padding: 100px;
+            }
+
+            .text, .title {
+                text-align: center;
+            }
+        </style>
+    </body>
+</html>
