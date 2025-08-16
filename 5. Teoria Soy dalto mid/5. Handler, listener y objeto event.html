@@ -7,14 +7,37 @@
         <title>Handler, listeners y objeto event</title>
     </head>
     <body>
-        <h2 class="title">addEventListener()</h2>
+        <h2 class="title">addEventListener(type, listener)</h2>
         <div class="container">
             <button id="buttAddEvent">greet</button>
+        </div>
+        <h2 class="title">addEventListener(type, listener, options)</h2>
+        <div class="container">
+            <button id="buttAddEvent1">greet</button>
+        </div>
+        <h2 class="title">addEventListener(type, parameter)</h2>
+        <div class="container container-last">
+            <button id="buttAddEvent2">click here</button>
+            <select id="selectAddEvent">
+                <option value="">Select a property</option>
+                <option value="type">type</option>
+                <option value="target">target</option>
+                <option value="currentTarget">currentTarget</option>
+                <option value="clientX">clientX</option>
+                <option value="clientY">clientY</option>
+                <option value="pageX">pageX</option>
+                <option value="pageY">pageY</option>
+                <option value="altKey">altKey</option>
+                <option value="ctrlKey">ctrlKey</option>
+                <option value="shiftKey">shiftKey</option>
+                <option value="timeStamp">timeStamp</option>
+            </select>
+            <div class="show"></div>
         </div>
         <script src="5. Handler, listener y objeto event..js"></script>
         <style>
             :root {
-                background: #121541;
+                color-scheme: light dark;
                 padding: 100px;
             }
 
@@ -34,6 +57,27 @@
                 color: #fff;
                 margin: 0 auto;
                 font-size: 20px;
+            }
+
+            .container-last {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .containers {
+                display: flex;
+            }
+
+            .containerOne {
+                margin: 0 auto;
+                padding: 30px;
+                background: #f00;
+            }
+
+            .containerTwo {
+                padding: 30px;
+                background: #0f0;
             }
         </style>
     </body>

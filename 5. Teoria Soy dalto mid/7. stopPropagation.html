@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>stopPropagation</title>
+    </head>
+    <body>
+        <h1 class="title">stopPropagation</h1>
+        <h2 class="title">without stopPropagation</h2>
+        <div class="cont">
+            <div class="cont-one cont-second">
+                <div class="cont-two cont-third">
+                    <button id="one">click</button>
+                </div>
+            </div>
+        </div>
+        <h2 class="title">stopPropagation in red</h2>
+        <div class="cont">
+            <div class="cont-three cont-second">
+                <div class="cont-four cont-third">
+                    <button id="two">click</button>
+                </div>
+            </div>
+        </div>
+        <h2 class="title">stopPropagation green</h2>
+        <div class="cont">
+            <div class="cont-five cont-second">
+                <div class="cont-six cont-third">
+                    <button id="three">click</button>
+                </div>
+            </div>
+        </div>
+        <h2 class="title">stopPropagation blue</h2>
+        <div class="cont">
+            <div class="cont-seven cont-second">
+                <div class="cont-eight cont-third">
+                    <button id="four">click</button>
+                </div>
+            </div>
+        </div>
+        <h2 class="title">stopPropagation in red and true</h2>
+        <div class="cont">
+            <div class="cont-nine cont-second">
+                <div class="cont-ten cont-third">
+                    <button id="five">click</button>
+                </div>
+            </div>
+        </div>
+        <h2 class="title">stopPropagation green and true</h2>
+        <div class="cont">
+            <div class="cont-eleven cont-second">
+                <div class="cont-twelve cont-third">
+                    <button id="six">click</button>
+                </div>
+            </div>
+        </div>
+        <script src="7. stopPropagation.js"></script>
+        <style>
+            :root {
+                color-scheme: light dark;
+                padding: 100px;
+            }
+
+            button {
+                width: 80px;
+                height: 80px;
+                background: #69f;
+                font-size: 20px;
+            }
+
+            .cont {
+                display: flex;
+            }
+
+            .cont-second {
+                margin: 0 auto;
+                background: #f00;
+                padding: 30px;
+            }
+
+            .cont-third {
+                background: #0f0;
+                padding: 30px;
+            }
+
+            .title {
+                text-align: center;
+            }
+        </style>
+    </body>
+</html>

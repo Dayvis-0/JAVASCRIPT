@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event flow</title>
+    </head>
+    <body>
+    <h1 class="title">Event bubbling</h1>
+    <h2 class="title">Event bubling example 1:</h2>
+    <div class="containers">
+        <div class="Cont-One Cont-Second">
+            <div class="Cont-Two Cont-Third">
+                <button id="Butt-One">click</button>
+            </div>
+        </div>
+    </div>
+    <h2 class="title">Event capture, Event bubling, Event bubling example 2 true in red:</h2>
+    <div class="containers">
+        <div class="Cont-Three Cont-Second">
+            <div class="Cont-Four Cont-Third">
+                <button id="Butt-Two">click</button>
+            </div>
+        </div>
+    </div>
+    <h2 class="title">Event bubling, Event capture, Event bubling  example 3 true in green:</h2>
+    <div class="containers">
+        <div class="Cont-Five Cont-Second">
+            <div class="Cont-Six Cont-Third">
+                <button id="Butt-Three">click</button>
+            </div>
+        </div>
+    </div>
+    <script src="6. Event flow (bubbling y capturing).js"></script>
+    <style>
+        :root {
+            color-scheme: light dark;
+            padding: 100px;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        button {
+            background: #69f;
+            height: 80px;
+            width: 80px;
+            margin: 0 auto;
+            font-size: 20px;
+        }
+
+        .containers {
+            display: flex;
+        }
+
+        .Cont-Second {
+            margin: 0 auto;
+            padding: 30px;
+            background: #f00;
+        }
+
+        .Cont-Third {
+            padding: 30px;
+            background: #0f0;
+        }
+    </style>
+    </body>
+</html>

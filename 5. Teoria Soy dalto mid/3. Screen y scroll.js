@@ -1,4 +1,4 @@
-const buttDelecScreen = document.querySelector("#screenSelect");
+const buttSelecScreen = document.querySelector("#screenSelect");
 const buttScreenLeft = document.querySelector("#screenLeft");
 const buttScreenTop = document.querySelector("#screenTop");
 const buttScrollX = document.querySelector("#scrollX");
@@ -17,8 +17,8 @@ const show3 = document.querySelector(".show3");
 const show4 = document.querySelector(".show4");
 /*La propiedad window.screen devuelve una referencia al obtejo de pantalla asociado con la ventana. El sreen objeto, implementando
 el Screen interfaz, es un objeto especial para inspeccionar las propiedades de la pantalla en la que se representa la ventana actual*/
-buttDelecScreen.addEventListener("change", () => {
-    const property = buttDelecScreen.value;
+buttSelecScreen.addEventListener("change", () => {
+    const property = buttSelecScreen.value;
 
     if (property) {
         show.textContent = ` ${property} : ${window.screen[property]}`;
