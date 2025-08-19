@@ -8,7 +8,15 @@
     </head>
     <body>
     <h1 class="title">Mouse events</h1>
-    <h2 class="title">dbclick</h2>
+    <h2 class="title">click</h2>
+    <div class="cont">
+        <div class="cont-one cont-second">
+            <div class="cont-two cont-third">
+                <button id="butt-zero">click</button>
+            </div>
+        </div>
+    </div>
+    <h2 class="title">dblclick</h2>
     <div class="cont">
         <div class="cont-one cont-second">
             <div class="cont-two cont-third">
@@ -20,15 +28,15 @@
     <div class="cont">
         <div class="cont-one cont-second">
             <div class="cont-two cont-third">
-                <button id="butt-one">click</button>
+                <button id="butt-two">click</button>
             </div>
         </div>
     </div>
     <h2 class="title">mouseout</h2>
-    <div class="cont">
-        <div class="cont-one cont-second">
+    <div class="cont contOut">
+        <div class="cont-one cont-second mouseOut">
             <div class="cont-two cont-third">
-                <button id="butt-one">click</button>
+                <button id="butt-three">click</button>
             </div>
         </div>
     </div>
@@ -36,23 +44,7 @@
     <div class="cont">
         <div class="cont-one cont-second">
             <div class="cont-two cont-third">
-                <button id="butt-one">click</button>
-            </div>
-        </div>
-    </div>
-    <h2 class="title">mouseenter</h2>
-    <div class="cont">
-        <div class="cont-one cont-second">
-            <div class="cont-two cont-third">
-                <button id="butt-one">click</button>
-            </div>
-        </div>
-    </div>
-    <h2 class="title">mouseenter</h2>
-    <div class="cont">
-        <div class="cont-one cont-second">
-            <div class="cont-two cont-third">
-                <button id="butt-one">click</button>
+                <button id="butt-four">click</button>
             </div>
         </div>
     </div>
@@ -60,7 +52,7 @@
     <div class="cont">
         <div class="cont-one cont-second">
             <div class="cont-two cont-third">
-                <button id="butt-one">click</button>
+                <button id="butt-five">click</button>
             </div>
         </div>
     </div>
@@ -68,7 +60,23 @@
     <div class="cont">
         <div class="cont-one cont-second">
             <div class="cont-two cont-third">
-                <button id="butt-one">click</button>
+                <button id="butt-six">click</button>
+            </div>
+        </div>
+    </div>
+    <h2 class="title">mouseleave</h2>
+    <div class="cont">
+        <div class="cont-one cont-second">
+            <div class="cont-two cont-third">
+                <button id="butt-seven">click</button>
+            </div>
+        </div>
+    </div>
+    <h2 class="title">mousedown</h2>
+    <div class="cont">
+        <div class="cont-one cont-second">
+            <div class="cont-two cont-third">
+                <button id="butt-eight">click</button>
             </div>
         </div>
     </div>
@@ -81,6 +89,27 @@
 
         .title {
             text-align: center;
+        }
+
+        .cont {            
+            display: flex;
+        }
+
+        .cont-second {
+            background: #f00;
+            padding: 40px;
+            margin: 0 auto;
+        }
+
+        .cont-third {
+            background: #0f0;
+            padding: 40px;
+        }
+
+        button {
+            background: #69f;
+            width: 60px;
+            height: 60px;
         }
     </style>
     </body>

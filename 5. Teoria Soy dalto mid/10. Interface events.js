@@ -1,0 +1,1 @@
+/*El evento error se activa en un elemento cuando un recurso*/
