@@ -7,11 +7,37 @@
         <title>interface events</title>
     </head>
     <body>
+        <h1 class="title">Interface events</h1>
+        <h1 class="title">error</h1>
+        <div class="container">
+            <div class="controls">
+                <button id="img-error" type="button">Generate image error</button>
+                <img class="bad-img"/>
+            </div>
+            <div class="event-log">
+                <label for="eventLog">Eventlog:</label>
+                <textarea 
+                    readonly
+                    class="event-log-contents"
+                    rows="8"
+                    cols="30"    
+                    id="eventLog"></textarea>
+            </div>
+        </div>
+        <h1 class="title">load</h1>
         <script src="10. Interface events.js"></script>
         <style>
             :root {
                 color-scheme: light dark;
                 padding: 100px;
+            }
+
+            .title {
+                text-align: center;
+            }
+
+            .container {
+                display: flex;
             }
         </style>
     </body>
