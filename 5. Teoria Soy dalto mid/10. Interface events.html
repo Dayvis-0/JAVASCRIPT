@@ -25,6 +25,31 @@
             </div>
         </div>
         <h1 class="title">load</h1>
+        <div class="container">
+            <div class="show"></div>
+        </div>
+        <h1 class="title">beforeunload</h1>
+        <div class="container">
+            <div class="show1"></div>
+        </div>
+        <h1 class="title">resize</h1>
+        <div class="container resize">
+            <p>Window height: <span id="height"></span></p>
+            <p>Window width: <span id="width"></span></p>
+        </div>
+        <h1 class="title">scroll</h1>
+        <p id="scroll"></p>
+        <div class="container">
+            <p class="scroll">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore illo numquam
+             ab perspiciatis autem voluptates ipsum reiciendis quam, quo sit in enim mollitia
+              architecto est sed quidem. Modi,
+               beatae asperiores?</p>
+        </div>
+        <h1 class="title">select</h1>
+        <div class="container select">
+            <input type="text" value="Try selecting some text in this element" id="inputSelect">
+            <p id="log"></p>
+        </div>
         <script src="10. Interface events.js"></script>
         <style>
             :root {
@@ -38,6 +63,10 @@
 
             .container {
                 display: flex;
+            }
+
+            .container.resize, .container.select {
+                display: block;
             }
         </style>
     </body>
