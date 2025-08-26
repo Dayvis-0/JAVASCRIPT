@@ -12,8 +12,30 @@
         <div class="container">
             <div class="setTimeOut">
                 <p>Say hello after two seconds?: </p>
-                <button id="greetButt">click</button>
-                <span id="pSetTimeOut"></span>
+                <button id="greetButt1">click</button>
+                <span id="setTimeOut1"></span><br>
+                <p>remove interval?</p>
+                <button id="removeSetTime1">click</button><br>
+                <label>What is your name? <input type="text" id="name"></label><br>
+                <button id="greetButt2">click</button><br>
+                <span id="setTimeOut2"></span><br>
+                <p>remove the two setTimeOuts?</p>
+                <button id="removeSetTime2">click</button>
+            </div>
+        </div>
+        <h1 class="title">setInterval</h1>
+        <div class="container">
+            <div class="setInterval">
+                <p>Say hello ever two seconds?: </p>
+                <button id="greetButt3">click</button>
+                <span id="setInterval1"></span><br>
+                <p>remove interval?</p>
+                <button id="removeSetInterval1">click</button><br>
+                <label>What is your name? <input type="text" id="name1"></label><br>
+                <button id="greetButt4">click</button><br>
+                <span id="setInterval2"></span><br>
+                <p>remove interval?</p>
+                <button id="removeSetInterval2">click</button>
             </div>
         </div>
         <script src="11. Timers.js"></script>
@@ -31,9 +53,15 @@
                 display: flex;
             }
 
-            .setTimeOut {
+            .setTimeOut, .setInterval {
                 display: block;
                 margin: 0 auto;
+            }
+
+            button {
+                width: 60px;
+                height: 30px;
+                background: #69f;
             }
         </style>
     </body>
