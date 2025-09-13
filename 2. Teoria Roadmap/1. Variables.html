@@ -8,12 +8,26 @@
     </head>
     <body>
         <h1 class="title">Variables</h1>
-        <button id="button_A">Press me</button><br><br>
-        <label > What is your name? </label><input type="text" id="yourName"><br><br>
-        <button id="buttName">click</button>
-        <p id="pName"></p>
-        <img src="Ana.jpeg" id="imgAna">
+        <button id="button_A">Press me</button>
         <h3 id="heading_A"></h3>
+        <label > What is your name? </label><input type="text" id="yourName"><br><br>
+        <p>Show in console? <button id="buttName">click</button></p>
+        <p id="pName"></p>
+        <p>Show or hide image? <button id="buttAna">click</button></p>
+        <img src="Ana.jpeg" id="imgAna">
+        <h2 class="title">Variable types</h2>
+        <h3 class="title">Numbers</h3>
+        <code>let myAge = 17</code>
+        <h3 class="title">Strings</h3>
+        <code>let dolphinGoodbye = "So long and thanks for all the fish"</code>
+        <h3 class="title">Boolean</h3>
+        <code>let iAmAlive = true</code>
+        <code>let test = 6 < 3</code>
+        <h3>Arrays</h3>
+        <code>let myNameArray = ["Chris", "Bob", "Jim"]</code>
+        <code>let myNumberArray = [100, 15, 20]</code>
+        <code>myNameArray[0]</code>
+        <code>myNumberArray[2]</code>
         <script src="1. Variables.js"></script>
         <style>
             :root {
@@ -31,9 +45,13 @@
                 width: fit-content;
             }
 
-            img {
+            #imgAna {
                 width: 500px;
                 display: none;
+            }
+
+            #imgAna.show {
+                display: block;
             }
         </style>
     </body>
