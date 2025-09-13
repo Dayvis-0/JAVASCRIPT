@@ -8,6 +8,14 @@ const yourName = document.getElementById("yourName");
 const buttAna = document.getElementById("buttAna");
 const imgAna = document.getElementById("imgAna");
 
+const arrayOne = document.getElementById("arrayOne");
+const arrayTwo = document.getElementById("arrayTwo");
+
+const objName = document.getElementById("objName");
+
+const typeNumberOne = document.getElementById("typeNumberOne");
+const typeNumberTwo = document.getElementById("typeNumberTwo");
+
 let count = 1;
 
 buttA.onclick = () => {
@@ -34,4 +42,23 @@ buttName.addEventListener("click", () => {
     var myName;
 })
 
+// Variable types
 
+let myNameArray = ["Chris", "Bob", "Jim"];
+arrayOne.textContent += `${myNameArray[0]}`;
+
+let myNumberArray = [100, 15, 20];
+arrayTwo.textContent += `${myNumberArray[2]}`;
+
+let dog = {
+    name: "Spot",
+    breed: "Dalmatian"
+};
+
+objName.textContent += dog.name;
+
+// dynamic typing
+let myNumber = "500";
+typeNumberOne.textContent += typeof myNumber;
+myNumber = 500;
+typeNumberTwo.textContent += typeof myNumber;
