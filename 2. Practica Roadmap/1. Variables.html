@@ -6,38 +6,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Variables</title>
         <link rel="stylesheet" href="1. Variables.css">
-        <link rel="stylesheet" href="1. Variables.js">
     </head>
     <body>
         <h1 class="title">Variables - Interactive Practice</h1>
         <div class="container">
             <h2>Click Counter</h2>
-            <button>Press me</button>
-            <button>Reset Counter</button>
+            <button id="buttClicks">Press me</button>
+            <p id="showCount"></p>
+            <button id="buttResetClicks">Reset Counter</button>
         </div>
         <div class="container">
             <h2>Your information</h2>
-            <input type="text">
-            <button>Show in console</button><button>Show here</button>
+            <input type="text" id="inpInforma" placeholder="Write your name">
+            <button id="buttInConsole">Show in console</button><button id="buttHere">Show here</button>
+            <p id="yourName"></p>
         </div>
         <div class="container">
             <h2>Show/Hide Image</h2>
-            <button></button>
+            <button id="buttTogle">Toggle Image</button>
+            <img src="Ana.jpeg" id="imgAna">
         </div>
         <div class="container">
             <h2>Calculator</h2>
+            <input type="number" placeholder="Number one" id="inpOne">
+            <select name="select" id="opertions">
+                <option value="1">Add(+)</option>
+                <option value="2">Substract(-)</option>
+                <option value="3">Multiply(*)</option>
+                <option value="4">Divide(/)</option>
+            </select>
+            <input type="number" placeholder="Number two" id="inpTwo">
+            <button id="buttCalcu">Calculate</button><button id="buttClean">Clean</button>
+            <p id="showResult"></p>
         </div>
         <div class="container">
             <h2>Task List</h2>
+            <button>add</button>
+            <input type="text" placeholder="New task"> 
+            <div>Task: 0</div>
+            <ul id=""></ul>
+            <button>Clear everything</button>
         </div>
         <div class="container">
             <h2>Color Generator</h2>
+            <button>Random color</button><button>Next color</button>
         </div>
         <div class="container">
             <h2>Text Counter</h2>
+            <button>Count</button>
         </div>
         <div class="container">
             <h2>Guess the Number</h2>
         </div>
+        <script src="1. Variables.js"></script>
     </body>
 </html>

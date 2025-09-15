@@ -11,3 +11,12 @@ body {
 .title {
     text-align: center;
 }
+
+#imgAna {
+    width: 500px;
+    display: none;
+}
+
+#imgAna.show {
+    display: block;
+}
