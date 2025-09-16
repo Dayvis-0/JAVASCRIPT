@@ -143,3 +143,12 @@ buttClear.addEventListener("click", () => {
     tasks = [];
     updateTaskList();
 });
+
+// Colo aleatorio
+const randomColor = document.getElementById("randomColor");
+const nextColor = document.getElementById("nextColor");
+const colorDisplay = document.getElementById("colorDisplay");
+const colorName = document.getElementById("colorName");
+
+let colors = ["FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "FFEAA7", "#DDA0DD", "#98D8C8"];
+let colorNames = ["Rojo", "Verde azulado", "Azul", "Verde", "Amarillo", ];

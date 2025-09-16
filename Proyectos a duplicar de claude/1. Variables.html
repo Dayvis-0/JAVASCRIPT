@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables - Práctica Mejorada</title>
+</head>
+<body>
+    <h1 class="title">Variables - Práctica Interactiva</h1>
+    
+    <!-- Ejercicio original del contador -->
+    <div class="exercise-box">
+        <h3>🔢 Contador de Clicks</h3>
+        <button id="button_A">Press me</button>
+        <h3 id="heading_A"></h3>
+        <button id="resetCount">Reset Counter</button>
+    </div>
+    
+    <!-- Ejercicio original del nombre mejorado -->
+    <div class="exercise-box">
+        <h3>👤 Tu Información</h3>
+        <label>¿Cuál es tu nombre?</label><input type="text" id="yourName" placeholder="Escribe tu nombre"><br><br>
+        <button id="buttName">Mostrar en consola</button>
+        <button id="buttShowName">Mostrar aquí</button>
+        <p id="pName"></p>
+    </div>
+    
+    <!-- Ejercicio original de la imagen mejorado -->
+    <div class="exercise-box">
+        <h3>🖼️ Mostrar/Ocultar Imagen</h3>
+        <button id="buttAna">Toggle Image</button>
+        <p id="imageStatus">Imagen: Oculta</p>
+        <img src="https://via.placeholder.com/400x300/4CAF50/white?text=Imagen+de+Práctica" id="imgAna">
+    </div>
+
+    <!-- EJERCICIOS MEJORADOS -->
+    
+    <!-- Calculadora mejorada -->
+    <div class="exercise-box highlight">
+        <h3>🧮 Calculadora Mejorada</h3>
+        <input type="number" id="num1" placeholder="Primer número">
+        <select id="operation">
+            <option value="+">Sumar (+)</option>
+            <option value="-">Restar (-)</option>
+            <option value="*">Multiplicar (×)</option>
+            <option value="/">Dividir (÷)</option>
+        </select>
+        <input type="number" id="num2" placeholder="Segundo número"><br><br>
+        <button id="buttCalc">Calcular</button>
+        <button id="clearCalc">Limpiar</button>
+        <div id="calcResult" class="result-box"></div>
+    </div>
+    
+    <!-- Lista de tareas simple -->
+    <div class="exercise-box highlight">
+        <h3>📝 Lista de Tareas</h3>
+        <input type="text" id="taskInput" placeholder="Nueva tarea">
+        <button id="addTask">Agregar</button>
+        <div id="taskCount" class="info">Tareas: 0</div>
+        <ul id="taskList"></ul>
+        <button id="clearTasks">Limpiar todo</button>
+    </div>
+    
+    <!-- Generador de colores -->
+    <div class="exercise-box">
+        <h3>🎨 Generador de Colores</h3>
+        <button id="randomColor">Color Aleatorio</button>
+        <button id="nextColor">Siguiente Color</button>
+        <div id="colorDisplay" class="color-box"></div>
+        <p id="colorName">Color actual: Azul</p>
+    </div>
+    
+    <!-- Contador de palabras -->
+    <div class="exercise-box">
+        <h3>📖 Contador de Texto</h3>
+        <textarea id="textArea" placeholder="Escribe algo aquí..."></textarea><br>
+        <button id="countText">Contar</button>
+        <div class="stats">
+            <span>Caracteres: <strong id="charCount">0</strong></span>
+            <span>Palabras: <strong id="wordCount">0</strong></span>
+            <span>Líneas: <strong id="lineCount">0</strong></span>
+        </div>
+    </div>
+    
+    <!-- Juego simple de adivinanzas -->
+    <div class="exercise-box highlight">
+        <h3>🎲 Adivina el Número</h3>
+        <p>Estoy pensando en un número entre 1 y 10...</p>
+        <input type="number" id="guessInput" min="1" max="10" placeholder="Tu número">
+        <button id="makeGuess">Adivinar</button>
+        <button id="newGame">Nuevo Juego</button>
+        <div id="guessResult" class="result-box"></div>
+        <div class="info">Intentos: <span id="attempts">0</span></div>
+    </div>
+
+    <hr>
+    
+    <!-- Sección de tipos de variables -->
+    <h2 class="title">Tipos de Variables</h2>
+    
+    <div class="type-section">
+        <h3 class="title">Numbers (Números)</h3>
+        <code>let myAge = 17</code>
+        <code>let pi = 3.14159</code>
+        <div class="practice">
+            <strong>Prueba:</strong> <span id="numberExample"></span>
+        </div>
+    </div>
+    
+    <div class="type-section">
+        <h3 class="title">Strings (Cadenas)</h3>
+        <code>let dolphinGoodbye = "So long and thanks for all the fish"</code>
+        <code>let greeting = 'Hello World'</code>
+        <div class="practice">
+            <strong>Longitud:</strong> <span id="stringExample"></span>
+        </div>
+    </div>
+    
+    <div class="type-section">
+        <h3 class="title">Boolean (Verdadero/Falso)</h3>
+        <code>let iAmAlive = true</code>
+        <code>let test = 6 < 3</code>
+        <div class="practice">
+            <strong>Resultado:</strong> <span id="booleanExample"></span>
+        </div>
+    </div>
+    
+    <div class="type-section">
+        <h3 class="title">Arrays (Listas)</h3>
+        <code>let myNameArray = ["Chris", "Bob", "Jim"]</code><br>
+        <code>let myNumberArray = [100, 15, 20]</code><br>
+        <code id="arrayOne">myNameArray[0] : </code><br>
+        <code id="arrayTwo">myNumberArray[2] : </code><br>
+        <code id="arrayThree">Array length: </code>
+        <div class="practice">
+            <button id="showArrayInfo">Mostrar más info</button>
+            <div id="arrayInfo"></div>
+        </div>
+    </div>
+    
+    <div class="type-section">
+        <h3 class="title">Objects (Objetos)</h3>
+        <code>let dog = { name: "Spot", breed: "Dalmatian", age: 5 };</code><br>
+        <code id="objName">dog.name : </code><br>
+        <code id="objBreed">dog.breed : </code>
+        <div class="practice">
+            <button id="createPet">Crear Nueva Mascota</button>
+            <div id="petInfo"></div>
+        </div>
+    </div>
+
+    <div class="type-section">
+        <h2 class="title">Dynamic Typing (Tipado Dinámico)</h2>
+        <code>let myNumber = "500"; </code><br>
+        <code id="typeNumberOne">typeof myNumber: </code><br>
+        <code>myNumber = 500; </code><br>
+        <code id="typeNumberTwo">typeof myNumber: </code>
+        <div class="practice">
+            <input type="text" id="typeInput" placeholder="Ingresa cualquier valor">
+            <button id="checkType">Ver Tipo</button>
+            <div id="typeResult"></div>
+        </div>
+    </div>
+
+    <style>
+        :root {
+            color-scheme: light dark;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .title {
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .exercise-box {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+
+        .exercise-box.highlight {
+            border-left: 5px solid #ff6b6b;
+            background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+        }
+
+        .exercise-box h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-size: 14px;
+            padding: 12px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        input, select, textarea {
+            padding: 12px;
+            margin: 5px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            resize: vertical;
+        }
+
+        #imgAna {
+            width: 400px;
+            max-width: 100%;
+            display: none;
+            border-radius: 10px;
+            margin: 10px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        #imgAna.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .result-box {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            font-weight: bold;
+        }
+
+        .result-box.error {
+            border-left-color: #dc3545;
+            background: #fff5f5;
+        }
+
+        .color-box {
+            width: 200px;
+            height: 100px;
+            border: 3px solid #333;
+            margin: 10px 0;
+            border-radius: 10px;
+            background: #4CAF50;
+            transition: all 0.3s ease;
+        }
+
+        .stats {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .stats span {
+            margin-right: 15px;
+        }
+
+        .info {
+            color: #666;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        #taskList {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            min-height: 50px;
+            margin: 10px 0;
+        }
+
+        .task-item {
+            background: #fff;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border-left: 3px solid #28a745;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .task-item:hover {
+            background: #e9ecef;
+        }
+
+        .task-item.completed {
+            opacity: 0.6;
+            text-decoration: line-through;
+            border-left-color: #6c757d;
+        }
+
+        .type-section {
+            background: rgba(255,255,255,0.9);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .practice {
+            background: #e3f2fd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #2196f3;
+        }
+
+        code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .exercise-box {
+                padding: 15px;
+            }
+            
+            input, select {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+
+    <script>
+        // Referencias originales
+        const buttA = document.querySelector("#button_A");
+        const headingA = document.querySelector("#heading_A");
+        const resetCount = document.getElementById("resetCount");
+
+        const buttName = document.getElementById("buttName");
+        const buttShowName = document.getElementById("buttShowName");
+        const pName = document.getElementById("pName");
+        const yourName = document.getElementById("yourName");
+
+        const buttAna = document.getElementById("buttAna");
+        const imgAna = document.getElementById("imgAna");
+        const imageStatus = document.getElementById("imageStatus");
+
+        const arrayOne = document.getElementById("arrayOne");
+        const arrayTwo = document.getElementById("arrayTwo");
+        const arrayThree = document.getElementById("arrayThree");
+        const showArrayInfo = document.getElementById("showArrayInfo");
+        const arrayInfo = document.getElementById("arrayInfo");
+
+        const objName = document.getElementById("objName");
+        const objBreed = document.getElementById("objBreed");
+        const createPet = document.getElementById("createPet");
+        const petInfo = document.getElementById("petInfo");
+
+        const typeNumberOne = document.getElementById("typeNumberOne");
+        const typeNumberTwo = document.getElementById("typeNumberTwo");
+        const typeInput = document.getElementById("typeInput");
+        const checkType = document.getElementById("checkType");
+        const typeResult = document.getElementById("typeResult");
+
+        // Variables originales
+        let count = 1;
+
+        // Contador original mejorado
+        buttA.onclick = () => {
+            buttA.textContent = "¡Hazme click otra vez!";
+            headingA.textContent = `${count} clicks hasta ahora`;
+            headingA.style.color = count % 2 === 0 ? '#28a745' : '#dc3545';
+            count += 1;
+        };
+
+        resetCount.onclick = () => {
+            count = 1;
+            buttA.textContent = "Press me";
+            headingA.textContent = "";
+            headingA.style.color = 'initial';
+        };
+
+        // Imagen mejorada
+        buttAna.addEventListener("click", () => {
+            imgAna.classList.toggle("show");
+            imageStatus.textContent = imgAna.classList.contains("show") ? 
+                "Imagen: Visible" : "Imagen: Oculta";
+        });
+
+        // Nombre mejorado
+        buttName.addEventListener("click", () => {
+            myName = yourName.value;
+            function logName() {
+                console.log(`Nombre ingresado: ${myName}`);
+            }
+            logName();
+            var myName;
+        });
+
+        buttShowName.addEventListener("click", () => {
+            let name = yourName.value;
+            if (name) {
+                pName.textContent = `¡Hola ${name}! Bienvenido/a.`;
+                pName.style.color = '#28a745';
+            } else {
+                pName.textContent = "Por favor ingresa tu nombre";
+                pName.style.color = '#dc3545';
+            }
+        });
+
+        // NUEVAS FUNCIONALIDADES
+
+        // Calculadora mejorada
+        const num1 = document.getElementById("num1");
+        const num2 = document.getElementById("num2");
+        const operation = document.getElementById("operation");
+        const buttCalc = document.getElementById("buttCalc");
+        const clearCalc = document.getElementById("clearCalc");
+        const calcResult = document.getElementById("calcResult");
+
+        buttCalc.addEventListener("click", () => {
+            let n1 = parseFloat(num1.value);
+            let n2 = parseFloat(num2.value);
+            let op = operation.value;
+            let result;
+
+            if (isNaN(n1) || isNaN(n2)) {
+                calcResult.textContent = "Por favor ingresa números válidos";
+                calcResult.className = "result-box error";
+                return;
+            }
+
+            switch(op) {
+                case '+': result = n1 + n2; break;
+                case '-': result = n1 - n2; break;
+                case '*': result = n1 * n2; break;
+                case '/': 
+                    if (n2 === 0) {
+                        calcResult.textContent = "No se puede dividir por cero";
+                        calcResult.className = "result-box error";
+                        return;
+                    }
+                    result = n1 / n2; 
+                    break;
+            }
+
+            calcResult.textContent = `${n1} ${op} ${n2} = ${result}`;
+            calcResult.className = "result-box";
+        });
+
+        clearCalc.addEventListener("click", () => {
+            num1.value = "";
+            num2.value = "";
+            calcResult.textContent = "";
+        });
+
+        // Lista de tareas
+        const taskInput = document.getElementById("taskInput");
+        const addTask = document.getElementById("addTask");
+        const taskList = document.getElementById("taskList");
+        const taskCount = document.getElementById("taskCount");
+        const clearTasks = document.getElementById("clearTasks");
+
+        let tasks = [];
+
+        function updateTaskList() {
+            taskList.innerHTML = "";
+            taskCount.textContent = `Tareas: ${tasks.length}`;
+            
+            tasks.forEach((task, index) => {
+                let li = document.createElement("li");
+                li.className = "task-item";
+                li.textContent = task;
+                li.onclick = () => toggleTask(index);
+                taskList.appendChild(li);
+            });
+        }
+
+        function toggleTask(index) {
+            let taskItem = taskList.children[index];
+            taskItem.classList.toggle("completed");
+        }
+
+        addTask.addEventListener("click", () => {
+            let task = taskInput.value.trim();
+            if (task) {
+                tasks.push(task);
+                taskInput.value = "";
+                updateTaskList();
+            }
+        });
+
+        taskInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                addTask.click();
+            }
+        });
+
+        clearTasks.addEventListener("click", () => {
+            tasks = [];
+            updateTaskList();
+        });
+
+        // Generador de colores
+        const randomColor = document.getElementById("randomColor");
+        const nextColor = document.getElementById("nextColor");
+        const colorDisplay = document.getElementById("colorDisplay");
+        const colorName = document.getElementById("colorName");
+
+        let colors = ["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7", "#DDA0DD", "#98D8C8"];
+        let colorNames = ["Rojo", "Verde azulado", "Azul", "Verde", "Amarillo", "Púrpura", "Menta"];
+        let currentColorIndex = 0;
+
+        randomColor.addEventListener("click", () => {
+            currentColorIndex = Math.floor(Math.random() * colors.length);
+            colorDisplay.style.backgroundColor = colors[currentColorIndex];
+            colorName.textContent = `Color actual: ${colorNames[currentColorIndex]}`;
+        });
+
+        nextColor.addEventListener("click", () => {
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            colorDisplay.style.backgroundColor = colors[currentColorIndex];
+            colorName.textContent = `Color actual: ${colorNames[currentColorIndex]}`;
+        });
+
+        // Contador de texto
+        const textArea = document.getElementById("textArea");
+        const countText = document.getElementById("countText");
+        const charCount = document.getElementById("charCount");
+        const wordCount = document.getElementById("wordCount");
+        const lineCount = document.getElementById("lineCount");
+
+        countText.addEventListener("click", () => {
+            let text = textArea.value;
+            charCount.textContent = text.length;
+            wordCount.textContent = text.trim() ? text.trim().split(/\s+/).length : 0;
+            lineCount.textContent = text.split('\n').length;
+        });
+
+        textArea.addEventListener("input", () => {
+            countText.click(); // Auto-contar mientras escribes
+        });
+
+        // Juego de adivinanzas
+        const guessInput = document.getElementById("guessInput");
+        const makeGuess = document.getElementById("makeGuess");
+        const newGame = document.getElementById("newGame");
+        const guessResult = document.getElementById("guessResult");
+        const attempts = document.getElementById("attempts");
+
+        let secretNumber = Math.floor(Math.random() * 10) + 1;
+        let attemptCount = 0;
+
+        makeGuess.addEventListener("click", () => {
+            let guess = parseInt(guessInput.value);
+            attemptCount++;
+            attempts.textContent = attemptCount;
+
+            if (isNaN(guess) || guess < 1 || guess > 10) {
+                guessResult.textContent = "Por favor ingresa un número entre 1 y 10";
+                guessResult.className = "result-box error";
+                return;
+            }
+
+            if (guess === secretNumber) {
+                guessResult.textContent = `¡Correcto! El número era ${secretNumber}. Lo lograste en ${attemptCount} intentos.`;
+                guessResult.className = "result-box";
+                guessInput.disabled = true;
+                makeGuess.disabled = true;
+            } else if (guess < secretNumber) {
+                guessResult.textContent = "Muy bajo... Intenta un número más alto";
+                guessResult.className = "result-box error";
+            } else {
+                guessResult.textContent = "Muy alto... Intenta un número más bajo";
+                guessResult.className = "result-box error";
+            }
+            
+            guessInput.value = "";
+        });
+
+        newGame.addEventListener("click", () => {
+            secretNumber = Math.floor(Math.random() * 10) + 1;
+            attemptCount = 0;
+            attempts.textContent = "0";
+            guessResult.textContent = "";
+            guessInput.disabled = false;
+            makeGuess.disabled = false;
+            guessInput.value = "";
+        });
+
+        guessInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                makeGuess.click();
+            }
+        });
+
+        // Variables de tipos originales mejoradas
+        let myNameArray = ["Chris", "Bob", "Jim", "Ana", "Pedro"];
+        arrayOne.textContent += `${myNameArray[0]}`;
+
+        let myNumberArray = [100, 15, 20, 75, 300];
+        arrayTwo.textContent += `${myNumberArray[2]}`;
+        arrayThree.textContent += `${myNameArray.length}`;
+
+        showArrayInfo.addEventListener("click", () => {
+            arrayInfo.innerHTML = `
+                <strong>Array completo:</strong><br>
+                Nombres: [${myNameArray.join(", ")}]<br>
+                Números: [${myNumberArray.join(", ")}]<br>
+                Primer nombre: ${myNameArray[0]}<br>
+                Último número: ${myNumberArray[myNumberArray.length - 1]}
+            `;
+        });
+
+        let dog = {
+            name: "Spot",
+            breed: "Dalmatian",
+            age: 5,
+            color: "Blanco con manchas"
+        };
+
+        objName.textContent += dog.name;
+        objBreed.textContent += dog.breed;
+
+        createPet.addEventListener("click", () => {
+            let pets = ["Gato", "Perro", "Pez", "Pájaro", "Hamster"];
+            let names = ["Luna", "Max", "Bella", "Charlie", "Rocky"];
+            let randomPet = pets[Math.floor(Math.random() * pets.length)];
+            let randomName = names[Math.floor(Math.random() * names.length)];
+            
+            let newPet = {
+                name: randomName,
+                type: randomPet,
+                age: Math.floor(Math.random() * 10) + 1
+            };
+
+            petInfo.innerHTML = `
+                <strong>Nueva mascota creada:</strong><br>
+                Nombre: ${newPet.name}<br>
+                Tipo: ${newPet.type}<br>
+                Edad: ${newPet.age} años
+            `;
+        });
+
+        // Dynamic typing original
+        let myNumber = "500";
+        typeNumberOne.textContent += typeof myNumber;
+        myNumber = 500;
+        typeNumberTwo.textContent += typeof myNumber;
+
+        // Ejemplos adicionales
+        document.getElementById("numberExample").textContent = `17 + 25 = ${17 + 25}`;
+        document.getElementById("stringExample").textContent = `"Hola Mundo".length = ${"Hola Mundo".length}`;
+        document.getElementById("booleanExample").textContent = `6 < 3 = ${6 < 3}`;
+
+        checkType.addEventListener("click", () => {
+            let value = typeInput.value;
+            let processedValue = value;
+            
+            // Intentar determinar el tipo
+            if (value === "true" || value === "false") {
+                processedValue = value === "true";
+            } else if (!isNaN(value) && value.trim() !== "") {
+                processedValue = parseFloat(value);
+            }
+            
+            typeResult.innerHTML = `
+                <strong>Análisis del valor "${value}":</strong><br>
+                Tipo detectado: ${typeof processedValue}<br>
+                Valor procesado: ${processedValue}<br>
+                Es número: ${!isNaN(processedValue) && typeof processedValue === 'number'}<br>
+                Longitud (si es string): ${typeof value === 'string' ? value.length : 'N/A'}
+            `;
+        });
+    </script>
+</body>
+</html>
