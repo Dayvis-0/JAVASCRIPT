@@ -95,3 +95,51 @@ buttClean.addEventListener("click", () => {
     inpTwo.value = "";
     showResult.textContent = "";
 })
+
+// Task list
+const valueInpTask = document.getElementById("inpTask");
+const buttAdd = document.getElementById("buttAdd");
+const buttClear = document.getElementById("buttClear");
+const tasksNumber = document.getElementById("tasksNumber");
+const taskList = document.getElementById("taskList");
+
+let tasks = [];
+
+function updateTaskList() {
+    taskList.innerHTML = "";
+    tasksNumber.textContent = `Task: ${tasks.length}`;
+
+    tasks.forEach((task, index) => {
+        let li = document.createElement("li");
+        li.className = "task-item";
+        li.textContent = task;
+        li.onclick = () => toggleTask(index);
+        taskList.appendChild(li);
+    });
+}
+
+
+function toggleTask(index) {
+    let taskItem = taskList.children(index);
+    taskItem.classList.toggle("comppleted");
+}
+
+buttAdd.addEventListener("click", () => {
+    let task = valueInpTask.value.trim();
+    if (task) {
+        tasks.push(task);
+        valueInpTask.value = "";
+        updateTaskList();
+    }
+});
+
+valueInpTask.addEventListener("keypress", (e) => {
+    if (e === "Enter") {
+        buttAdd.click();
+    }
+});
+
+buttClear.addEventListener("click", () => {
+    tasks = [];
+    updateTaskList();
+});

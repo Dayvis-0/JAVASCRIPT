@@ -57,7 +57,7 @@ let dog = {
 
 objName.textContent += dog.name;
 
-// dynamic typing
+// Dynamic typing
 let myNumber = "500";
 typeNumberOne.textContent += typeof myNumber;
 myNumber = 500;
