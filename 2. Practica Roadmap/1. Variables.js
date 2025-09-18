@@ -150,5 +150,40 @@ const nextColor = document.getElementById("nextColor");
 const colorDisplay = document.getElementById("colorDisplay");
 const colorName = document.getElementById("colorName");
 
-let colors = ["FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "FFEAA7", "#DDA0DD", "#98D8C8"];
-let colorNames = ["Rojo", "Verde azulado", "Azul", "Verde", "Amarillo", ];
+let colors = ["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7", "#DDA0DD", "#98D8C8"];
+let colorNames = ["Red", "Blue green", "Blue", "Green", "Yellow", "Purple", "Mint"];
+let currentColorIndex = 0;
+
+randomColor.addEventListener("click", () => {
+    currentColorIndex = Math.floor(Math.random() * colors.length);
+    colorDisplay.style.backgroundColor = colors[currentColorIndex];
+    colorName.textContent = `Current color: ${colorNames[currentColorIndex]}`;
+})
+
+nextColor.addEventListener("click", () => {
+    currentColorIndex = (currentColorIndex + 1) % colors.length;
+    colorDisplay.style.backgroundColor = colors[currentColorIndex];
+    colorName.textContent = `Current color: ${colorNames[currentColorIndex]}`;
+})
+
+// Contador de textos
+const coutChaWoLi = document.getElementById("coutChaWoLi");
+const countCharacter = document.getElementById("countCharacter");
+const countWords = document.getElementById("countWords");
+const countLines = document.getElementById("countLines");
+const countText = document.getElementById("countText");
+const countTextValue = countText.value;
+
+function countCharacters ()  {
+    const count = 0;
+
+    if (countTextValue.trim() != "") {
+        count = countTextValue;
+    }
+
+    return count;    
+}
+
+coutChaWoLi.addEventListener("click", () => {
+    countCharacter.textContent = countCharacters();
+})
