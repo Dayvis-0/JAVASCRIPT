@@ -55,14 +55,18 @@
         </div>
         <div class="container">
             <h2>Text Counter</h2>
-            <input type="text" id="countText" class="box-count-text" placeholder="Write something here">
-            <button id="coutChaWoLi">Count</button>
+            <textarea class="textArea" id="textArea" placeholder="Write something here"></textarea>
+            <button id="countText">Count</button>
             <div class="container-resutl">
                 <p>Characters:  <span id="countCharacter">0</span> Words: <span id="countWords">0</span> Lines: <span id="countLines">0</span></p>
             </div>
         </div>
         <div class="container">
             <h2>Guess the Number</h2>
+            <input type="number" id="numberGuess"> <button id="guessNumber">Guess</button><button id="newGame">New game</button>
+            <div>
+                <span id="resultText"></span>
+            </div>
         </div>
         <script src="1. Variables.js"></script>
     </body>

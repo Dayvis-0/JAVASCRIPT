@@ -144,7 +144,7 @@ buttClear.addEventListener("click", () => {
     updateTaskList();
 });
 
-// Colo aleatorio
+// Color aleatorio
 const randomColor = document.getElementById("randomColor");
 const nextColor = document.getElementById("nextColor");
 const colorDisplay = document.getElementById("colorDisplay");
@@ -167,23 +167,23 @@ nextColor.addEventListener("click", () => {
 })
 
 // Contador de textos
-const coutChaWoLi = document.getElementById("coutChaWoLi");
+const textArea = document.getElementById("textArea");
+const countText = document.getElementById("countText");
 const countCharacter = document.getElementById("countCharacter");
 const countWords = document.getElementById("countWords");
 const countLines = document.getElementById("countLines");
-const countText = document.getElementById("countText");
-const countTextValue = countText.value;
 
-function countCharacters ()  {
-    const count = 0;
+countText.addEventListener("click", () => {
+    let text = textArea.value;
+    countCharacter.textContent = text.length;
+    countWords.textContent = text.trim() ? text.trim().split(/\s+/).length : 0;
+    countLines.textContent = text.split('\n').length;
+});
 
-    if (countTextValue.trim() != "") {
-        count = countTextValue;
-    }
+textArea.addEventListener("input", () => {
+    countText.click();
+});
 
-    return count;    
-}
-
-coutChaWoLi.addEventListener("click", () => {
-    countCharacter.textContent = countCharacters();
-})
+// Adivina el numero
+const numberGuess = document.getElementById("numberGuess");
+const guessNumber = document.getElementById("guessNumber");
