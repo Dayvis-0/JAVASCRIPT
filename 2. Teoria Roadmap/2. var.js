@@ -38,3 +38,18 @@ foo();
   bloque pueden seguir siendo referenciadas fuera del bloque.*/
 for (var a of [1, 2, 3]);
 console.log("for " + a);
+
+/*En un script, una variable declarada con var se añade como propiedad no configurable del objeto global. Esto 
+significa que su descriptor de propiedad no se puede modificar ni eliminar con delete. JavaScript cuenta con gestión
+automática de memoria, y no tendría sentido usar el operador delete en una variable global.
+
+"use strict";
+
+var xn = 1;
+
+Object.hasOwn(globalThis, "xn");
+delete globalThis.xn;
+delete xn;
+*/
+
+// Hoisting
