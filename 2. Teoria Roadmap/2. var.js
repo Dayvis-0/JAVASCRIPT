@@ -93,7 +93,7 @@ de var siempre sobrescribe el valor de la función, independientemente de su pos
 función se elevan antes de que se evalúe cualquier inicializador, por lo que este último aparece después y sobrescribe el valor.*/
 var aone = 1;
 function aone() {}
-console.log("aone = " + aone);
+console.log("\naone = " + aone);
 
 // Las declaraciones var no pueden estar en el mismo ámbito que una declaración let, const, class o import.
 var atwo = 1;
@@ -105,10 +105,59 @@ let athree = 1;
     // var athree = 1;  SyntaxError: Identifier 'athree' has already been declared
 }
 
-
 // No se aplica al siguiente caso, donde let está en un ámbito secundario de var, no en el mismo ámbito:
-
 var afour = 1;
 {
     let afour = 2;
 }
+
+// Una declaracion de var dentro del cuerpo de una funcion puede tener el mismo nombre que un parametro
+function foo(a) {
+    var a = 1;
+    console.log(a);
+}
+
+foo(2);
+
+/*Una declaración de variable dentro de un bloque catch puede tener el mismo nombre que el identificador enlazado a catch, pero solo si el 
+enlace catch es un identificador simple, no un patrón de desestructuración. Esta sintaxis está obsoleta y no debe utilizarse con confianza. En
+ este caso, la declaración se eleva fuera del bloque catch, pero cualquier valor asignado dentro del bloque catch no es visible fuera de js.*/
+try {
+    throw new Error();
+} catch (e) {
+    var e = 2;
+}
+
+console.log("\n e = " + e);
+// Explicitamente como
+var e;
+
+try {
+    throw new Error();
+} catch (e) {
+    e = 2;
+    console.log("\nFrom the catch "+ e);
+}
+
+console.log(e);
+
+// Asignar dos variables con un unico valor de cadena
+var ice = "You";
+var cream = ice;
+// Esto es equivalente a 
+var prac, tice = prac = "Deam";
+
+console.log("\nice = " + ice);
+console.log("cream = " + cream);
+console.log("prac = " + prac);
+console.log("tice = " + tice);
+
+// Tenga en cuenta el ordem
+var order = inthis, inthis = "A";
+console.log("\norder = " + order);
+console.log("inthis = " + inthis);
+
+/*Esto es explicitamente como
+var x,y;
+x = y;
+y = "A"*/
