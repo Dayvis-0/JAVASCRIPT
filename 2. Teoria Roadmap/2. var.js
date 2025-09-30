@@ -52,4 +52,63 @@ delete globalThis.xn;
 delete xn;
 */
 
-// Hoisting
+/*Hoisting
+Declarar un var en cualquier parte del código equivale a declararla al principio. Esto también significa que una variable puede parecer
+utilizada antes de ser declarada. Este comportamiento se denomina "hoisting", ya que parece que la declaración de la variable
+se mueve al principio de la función, el bloque de inicialización estática o el código fuente del script donde aparece.*/  
+bla = 2;
+var bla;
+
+// Esto se entiende explicitamente como
+var bla;
+bla = 2;
+
+function doSomething() {
+    console.log(bar);
+    var bar = 111;
+    console.log(bar);
+}
+
+// Esto se entiende explicitamente como
+
+function doSomething() {
+    var bar;
+    console.log(bar);
+    bar = 111;
+    console.log(bar);
+}
+
+/*Redeclaraciones
+Las declaraciones de variables duplicadas que utilizan var no generarán un error, incluso en modo estricto, y la variable
+no perderá su valor, a menos que la declaración tenga un inicializador.*/
+
+var a = 1;
+var a = 2;
+console.log("a = " + a);
+var a;
+console.log("a = " + a);
+
+/*Las declaracion var también pueden estar en el mismo ámbito que una declaración de función. En este caso, el inicializador de la declaración
+de var siempre sobrescribe el valor de la función, independientemente de su posición relativa. Esto se debe a que las declaraciones de 
+función se elevan antes de que se evalúe cualquier inicializador, por lo que este último aparece después y sobrescribe el valor.*/
+var aone = 1;
+function aone() {}
+console.log("aone = " + aone);
+
+// Las declaraciones var no pueden estar en el mismo ámbito que una declaración let, const, class o import.
+var atwo = 1;
+// let atwo = 1;  SyntaxError: Identifier 'atwo' has already been declared
+
+// Dado que las declaraciones de variables no tienen como ámbito los bloques, esto también se aplica al siguiente caso:
+let athree = 1;
+{
+    // var athree = 1;  SyntaxError: Identifier 'athree' has already been declared
+}
+
+
+// No se aplica al siguiente caso, donde let está en un ámbito secundario de var, no en el mismo ámbito:
+
+var afour = 1;
+{
+    let afour = 2;
+}
