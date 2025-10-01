@@ -158,6 +158,67 @@ console.log("\norder = " + order);
 console.log("inthis = " + inthis);
 
 /*Esto es explicitamente como
-var x,y;
-x = y;
+var order,inthis;
+order = inthis;
 y = "A"*/
+
+/* Inicializacion de varias variables
+
+El operador de asignacion (=) se evalua de derecha a izquierda. Entonces la linea se cree como
+var var1 = (var2 = 1);
+Entonces la instruccion queda como:
+var var1 = 1;*/
+var var1 = var2 = 1;
+
+console.log("\n" + var1, var2);
+
+var var5 = 0;
+function f() {
+    var var5 = var6 = 1; // Declara var5 localmente, declara y globalmente
+    // en modo no estricto se crea implícitamente una variable global var6
+}
+
+f();
+
+console.log("var5 = " + var5 + " var6 = " + var6); // 0 1
+
+"use strict";
+
+var varia = 0;
+
+function funct() {
+    var varia = variatwo = 1;
+}
+
+funct();
+
+console.log("\nvaria = " + varia + " variatwo = " + variatwo)
+
+/*Las variables que parecen ser globales implícitas pueden ser referencias a variables en un ámbito de función externo:*/
+var assign0 = 0;
+console.log("\n" + typeof assign3);
+
+function aFunc() { 
+    var assign2 = 2;
+
+    console.log("\nassign0 = " + assign0 + " assign2 = " + assign2);
+
+    function bFunc() { 
+        assign0 = 3;
+        assign2 = 4;
+        assign3 = 5;
+    }
+
+    bFunc();
+    console.log("\nassign0 = " + assign0 + " assign2 = " + assign2 + " assign3 = " + assign3);
+}
+
+aFunc();
+console.log("\nassign0 = " + assign0 + " assign3 = " + assign3);
+console.log(typeof assign2);
+
+// Declaración con desestructuración 
+// El lado izquierdo de cada = también puede ser un patrón de enlace. Esto permite crear varias variables a la vez.
+const result = /(aRes+)(bRes+)(c+)/.exec("aaabcc");
+var [,aRes, bRes, cRes] = result;
+console.log("\n" + aRes, bRes, cRes);
