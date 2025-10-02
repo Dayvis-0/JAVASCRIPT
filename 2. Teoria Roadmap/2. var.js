@@ -11,10 +11,10 @@ var x = 1;
 
 if (x === 1) {
     var x = 2;
-    console.log(x);
+    console.log("From function " + x);
 }
 
-console.log(x);
+console.log("From global " + x);
 
 function foo() {
     var y = 1;
@@ -34,15 +34,14 @@ function foo() {
 foo();
 
 /*Es importante destacar que otras construcciones de bloques, incluidas las declaraciones de bloque, try...catch, switch,
- encabezados de una de las declaraciones for, no crean ámbitos para var, y las variables declaradas con var dentro de dicho
-  bloque pueden seguir siendo referenciadas fuera del bloque.*/
+encabezados de una de las declaraciones for, no crean ámbitos para var, y las variables declaradas con var dentro de dicho
+bloque pueden seguir siendo referenciadas fuera del bloque.*/
 for (var a of [1, 2, 3]);
 console.log("for " + a);
 
 /*En un script, una variable declarada con var se añade como propiedad no configurable del objeto global. Esto 
 significa que su descriptor de propiedad no se puede modificar ni eliminar con delete. JavaScript cuenta con gestión
 automática de memoria, y no tendría sentido usar el operador delete en una variable global.
-
 "use strict";
 
 var xn = 1;
@@ -58,7 +57,6 @@ utilizada antes de ser declarada. Este comportamiento se denomina "hoisting", ya
 se mueve al principio de la función, el bloque de inicialización estática o el código fuente del script donde aparece.*/  
 bla = 2;
 var bla;
-
 // Esto se entiende explicitamente como
 var bla;
 bla = 2;
@@ -68,9 +66,7 @@ function doSomething() {
     var bar = 111;
     console.log(bar);
 }
-
 // Esto se entiende explicitamente como
-
 function doSomething() {
     var bar;
     console.log(bar);
@@ -219,6 +215,8 @@ console.log(typeof assign2);
 
 // Declaración con desestructuración 
 // El lado izquierdo de cada = también puede ser un patrón de enlace. Esto permite crear varias variables a la vez.
-const result = /(aRes+)(bRes+)(c+)/.exec("aaabcc");
-var [,aRes, bRes, cRes] = result;
-console.log("\n" + aRes, bRes, cRes);
+const result = /(a+)(b+)(c+)/.exec("aaabcc");
+// var [,a, b, c] = result;
+// console.log("\n" + a, b, c);
+
+console.log(result);
