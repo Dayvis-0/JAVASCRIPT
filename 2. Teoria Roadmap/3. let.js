@@ -110,3 +110,67 @@ switch (xParamet) {
         break;
     }
 }
+
+/* Reglas de alcance 
+Las variables declaradas por let tienen su ámbito en el bloque para el que se declaran, así como en 
+cualquier subbloque que contenga. De esta manera, let funciona de forma muy similar a var. La principal 
+diferencia radica en que el ámbito de una variable var es la función que la contiene en su totalidad:*/
+function varTest() {
+    var xVar = 1;
+    {
+        var xVar = 2; // Misma variable
+        console.log("\nin block from function xVar = " + xVar);
+    }
+    console.log("in function xVar = " + xVar);
+}
+
+varTest();
+
+function letTest() {
+    let xLet = 1;
+    {
+        let xLet = 2;
+        console.log("\nin block from function xLet = " + xLet);
+    }
+
+    console.log("in function xLet = " + xLet);
+}
+
+letTest();
+
+// En el nivel superior de programas y funciones, let a diferencia de var, no crea una propiedad en el objeto global
+var xVariable = "global";
+let yVariable = "global";
+
+console.log("\nxVariable = " + this.xVariable);
+console.log("yVariable = " + this.yVariable);
+
+//El siguiente código genera un ReferenceError en la línea mostrada:
+function test() {
+  var foo = 33;
+  if (foo) {
+    // let foo = foo + 55; // ReferenceError
+  }
+}
+test();
+
+/*Este fenómeno puede resultar confuso en una situación como la siguiente. La instrucción let n de n.a ya
+está dentro del ámbito del bloque del bucle for...of. Por lo tanto, el identificador n.a se resuelve
+como la propiedad a del objeto n, ubicada en la primera parte de la instrucción (let n). Esta aún se
+encuentra en la zona muerta temporal, ya que su declaración no se ha alcanzado ni terminado.*/
+function go(n) {
+    // n aqui esta definido
+    console.log("\n");
+    console.log(n);
+
+    // for (let n of n.a) {
+    //     console.log(n); Reference error
+    // }
+}
+
+go({a: [1,2,3]});
+
+// Declaracion con desestructuracion
+const result = /(a+)(b+)(c+)/.exec("aaabcc");
+let [, a, b, c] = result;
+console.log(a, b, c); // "aaa" "b" "cc"
