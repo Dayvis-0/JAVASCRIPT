@@ -6,7 +6,6 @@ var name1 = value1, name2 = value2;
 var name1, name2 = value2;
 var name1 = value1, name2, /.../ nameN = valueN;
 */
-
 var x = 1;
 
 if (x === 1) {
