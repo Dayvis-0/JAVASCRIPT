@@ -31,7 +31,6 @@ O si ninguna de las anteriores aplica:
 - El ambito global, para el codigo que se ejecuta en modo script
 
 Zona muerta temporal
-
 Se dice que una variable declarada con let, const o class, esta en una "zona muerta temporal" desde el inicio
 del bloque hasta que la ejecucion de codigo llega al lugar donde se declara e inicializa la variable*/
 
