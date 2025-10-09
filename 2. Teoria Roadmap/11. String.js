@@ -79,3 +79,40 @@ const s2 = new String("2 + 2"); // Crea un objeto String
 console.log('\n'); 
 console.log(eval(s1));
 console.log(eval(s2));
+console.log(eval(s2.valueOf()));
+
+/*Coerción
+Significa que JS convierte automáticamente un tipo de dato en otro cuando una operación lo necesita*/
+console.log('\n');
+console.log(String("hola"));
+console.log(String(undefined));
+console.log(String(null));
+console.log(String(true));
+console.log(String(123));
+console.log(String(-5.5));
+console.log(String(1e3));
+console.log(String(NaN));
+console.log(String(Infinity));
+console.log(String(123n));
+console.log(String(Symbol("id")));
+// const symbolStr = "Hola " + Symbol("id") TypeError; 
+const obj = { a:1 };
+console.log(String(obj));
+const obj1 = {
+    valueOf() { return 42; },
+    toString() { return{}; }
+};
+console.log(String(obj1));
+const obj2 = {
+    toString() { return{}; },
+    valueOf() { return 42; }
+};
+console.log(String(obj2));
+/*
+String(obj) - toString() → valueOf() - "[object Object]"
+Number(obj)	- valueOf() → toString() - 42*/
+console.log(`${123}`);
+console.log(`${true}`);
+const obj3 = { toString() { return "objeto"; }};
+console.log(`${obj3}`);
+console.log("" + 123);
