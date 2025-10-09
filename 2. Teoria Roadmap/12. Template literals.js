@@ -126,8 +126,67 @@ function template(strings, ...keys) {
     };
 }
 
-const t1Closure = template`${0}${1}${2}!`;
-t1Closure("Y", "A");
+const t1Closure = template`${0}${1}${0}!`;
+console.log('\n');
+console.log(t1Closure("Y", "A"));
+
+const t2Closure = template`${0} ${"foo"}!`;
+console.log('\n');
+console.log(t2Closure("Hello", { foo: "World"}));
+
+const t3Closure = template`I'm ${"name"}. I'm almost ${"age"} years old`;
+console.log('\n');
+console.log(t3Closure("foo", {name: "MDN", age: 30}));
+console.log(t3Closure({name: "MDN", age: 30}));
+
+/*Para cualquier expresion literal de plantilla etiquetada en particular, la función de etiqueta siempre se 
+llamará con exactamente la misma matriz literal, sin importar cuántas veces se evalúe el literal*/
+const callHistory = [];
+
+function tag(strings, ...values) {
+    callHistory.push(strings);
+    return {};
+}
+
+function evaluateLiteral() {
+    return tag`Hello. ${"world"}`;
+}
+console.log("\n");
+console.log(evaluateLiteral() === evaluateLiteral());
+console.log(callHistory[0] === callHistory[1]);
+
+/*Raw strings
+La propiedad especial raw, disponible en el primer argumento de la función de etiqueta, le permite acceder a las
+cadenas sin procesar tal como fueron ingresadas, sin procesar secuancias de escape*/
+function tagOne(strings) {
+    console.log(strings.raw[0]);
+}
+
+tagOne`string text line 1 \n string text line 2`;
+
+// Ademas, existe el método String.raw() para crear cadenas sin procesar tal como lo haria la función de 
+// plantilla predeterminada y la concatención de cadenas
+const str = String.raw`Hi\n${2 + 3}!`;
+console.log("\n");
+console.log(str.length);
+console.log(Array.from(str).join(","));
+
+// identity imita a String.raw pero con strings procesados, por eso el \n si hace salto de linea
+const identity = (strings, ...values) => 
+    String.raw({ raw: strings }, ...values);
 
 console.log('\n');
-console.log(t1Closure);
+console.log(identity`Hi\n${2+3}!`);
+
+// Esto es util para muchas herramientas que dan un tratamiento especial a los literales etiquetados
+// con un nombre particular
+const html = (strings, ...values) => String.raw({ raw: strings }, ...values);
+const doc = html`<!doctype html>
+    <html lang="en-US">
+        <head>
+            <title>Hello</title>
+        </head>
+        <body>
+            <h1>Hello world!</h1>
+        </body>
+    </html>`;

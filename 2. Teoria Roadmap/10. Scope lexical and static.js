@@ -1,5 +1,5 @@
 /*En JS, las funciones recuerdan el lugar en el código donde fueron declaradas, no donde se ejecutaan.
-Lo que eso significa es que la forma en que se realiza la búsqueda de variables o laa búsqueda de alcance es
+Lo que eso significa es que la forma en que se realiza la búsqueda de variables o la búsqueda de alcance es
 donde se definen las funciones, no donde se ejecutan.*/
 const dog = 'snickers';
 
