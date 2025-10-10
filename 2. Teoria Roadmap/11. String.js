@@ -139,4 +139,34 @@ Refleja la longitud de la cadena. Solo lectura*/
 const str5 = "Life, the universe and everthing. Answer: ";
 console.log(`${str5} ${str5.length}`);
 
-/*Metodos de instancia*/
+/*Metodos de instancia
+
+Devuelve el carácter (examctamente una unidad de codigo UTF-16) en el indice especificado. Acepta enteros negativos,
+que contengan hacia atrás desde el último carácter de la cadena*/
+console.log("\n");
+const sentence = "The quick browm fox jumps over the lazy dog.";
+console.log(`An index of -1 returns the character ${sentence.at(-1)}`)
+// Devuelve el cáracter (exactamente una unidad de codigo UTF-16) en el indice especificado solo acepta indices positivos
+console.log(`The character at index 1 is ${sentence.charAt(1)}`);
+// Devuelve un número que es el valor de la unidad de código UTF-16 en el indice dado
+console.log(`Character  code ${sentence.charCodeAt(5)} is equal to ${sentence.charAt(5)}`);
+// Devuelve un número entero no negativo que es el valor del punto de código codificado en UTF-16 que 
+// comienza en la posición especificada
+const icons = "☃★♲";
+console.log(icons.codePointAt(1));
+// Combina el texto de dos (o más) cadenas y devuelve una nueva cadena
+const stri1 = "Hello";
+const stri2 = "World";
+console.log(stri1.concat(" ", stri2));
+// Determina si una cadena termina con los caracteres de la cadena searchString
+const strin1 = "Cats are the best";
+console.log("Cats are the best" + strin1.endsWith("best"));
+console.log("Cats are the best" + strin1.endsWith("best", 15));
+// Determina si la cadena de llamada contiene searchString
+const sentence1 = "The quick brown fox jumps over the lazy dog.";
+const word = "fox";
+console.log(
+    `The word "${word}" ${
+        sentence.includes(word) ? "is" : "is not"
+    } in the sentence`,
+)
