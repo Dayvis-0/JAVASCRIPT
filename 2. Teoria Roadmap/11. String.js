@@ -116,3 +116,27 @@ console.log(`${true}`);
 const obj3 = { toString() { return "objeto"; }};
 console.log(`${obj3}`);
 console.log("" + 123);
+
+/*Caracteres UTF-16, puntos de código Unicode y grupos de grafemas*/
+console.log("\n");
+console.log("😄".split(""));
+console.log('😄');
+/* Operador spread ... -> Sirve para expandir o distribuir los elementos de un objeto iterable, como un arreglo 
+o una cadena en lugares donde se esperan multiples elementos*/ 
+console.log([..."👉🏿"]); 
+
+/* Metodos estaticos
+Devuelve una cadena creada a partir de la secuencia especidificada de unidades de código UTF-16*/
+console.log("\n");
+console.log(String.fromCharCode(189, 43, 190, 61));
+//Devuelve una candena creada a partir de la secuencia especificada de puntos de código
+console.log(String.fromCodePoint(9731, 9733, 9842, 0x2f804));
+// Devuelve una cadena creada a partir de una cadena de plantilla sin procesar
+console.log(String.raw`HI\n${1+1}!`);
+
+/*Propiedades de instancia
+Refleja la longitud de la cadena. Solo lectura*/
+const str5 = "Life, the universe and everthing. Answer: ";
+console.log(`${str5} ${str5.length}`);
+
+/*Metodos de instancia*/
