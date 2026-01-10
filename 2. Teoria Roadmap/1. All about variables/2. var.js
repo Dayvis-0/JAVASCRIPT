@@ -1,4 +1,5 @@
-/*La declaracion var declara variables con alcance funcional o global, inicializando opcionalmente cada una en un valor
+/*La declaracion var declara variables con alcance funcional o global, inicializando 
+opcionalmente cada una en un valor.
 Sintaxis
 var name1;
 var name1 = value1;

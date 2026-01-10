@@ -28,8 +28,8 @@ buttAna.addEventListener("click", () => {
     imgAna.classList.toggle("show");
 });
 
-/*Si se escribe un programa JS de varias lineas que declara e inicializa una variable, puede declarar una variable con var
-despues de inicializarlo y seguira funcionando, esto solo funciona con var*/
+/*Si se escribe un programa JS de varias lineas que declara e inicializa una variable, puede declarar
+una variable con var despues de inicializarlo y seguira funcionando, esto solo funciona con var.*/
 buttName.addEventListener("click", () => {
     myName = yourName.value;
 
