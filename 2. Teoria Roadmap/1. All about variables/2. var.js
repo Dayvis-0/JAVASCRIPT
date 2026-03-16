@@ -66,18 +66,21 @@ var bla;
 var bla;
 bla = 2;
 
-function doSomething() {
-    console.log(bar);
+function doSomething1() {
+    console.log("Hoisting 1: " + bar);
     var bar = 111;
-    console.log(bar);
+    console.log("Hoisting 1: " + bar);
 }
 // Esto se entiende explicitamente como
-function doSomething() {
+function doSomething2() {
     var bar;
-    console.log(bar);
+    console.log("Hoisting 2: " + bar);
     bar = 111;
-    console.log(bar);
+    console.log("Hoisting 2: " + bar);
 }
+
+doSomething1();
+doSomething2();
 
 /*Redeclaraciones
 Las declaraciones de variables duplicadas que utilizan var no generarán un error, 
@@ -85,9 +88,8 @@ incluso en modo estricto, y la variable no perderá su valor, a menos que la dec
 tenga un inicializador.*/
 
 var a = 1;
-var a = 2;
 console.log("a = " + a);
-var a;
+var a = 2;
 console.log("a = " + a);
 
 /*Las declaracion var también pueden estar en el mismo ámbito que una declaración de 
@@ -162,27 +164,27 @@ console.log("cream = " + cream);
 console.log("prac = " + prac);
 console.log("tice = " + tice);
 
-// Tenga en cuenta el ordem
+// Tenga en cuenta el orden
 var order = inthis, inthis = "A";
 console.log("\norder = " + order);
 console.log("inthis = " + inthis);
 
 /*Esto es explicitamente como
-var order,inthis;
+var order, inthis;
 order = inthis;
 y = "A"*/
 
 /* Inicializacion de varias variables
 
-El operador de asignacion (=) se evalua de derecha a izquierda. Entonces la linea se
-cree como:
+El operador de asignación (=) se evalua de derecha a izquierda. Entonces la linea se
+crea como:
 
 var var1 = (var2 = 1);
-Entonces la instruccion queda como:
+Entonces la instrucción queda como:
 var var1 = 1;*/
 var var1 = var2 = 1;
 
-console.log("\n" + var1, var2);
+console.log("\nVar1 = " + var1 + " Var2 = " + var2);
 
 var var5 = 0;
 function f() {
@@ -195,7 +197,7 @@ f();
 console.log("var5 = " + var5 + " var6 = " + var6); // 0 1
 
 "use strict";
-practica
+
 var varia = 0;
 
 function funct() {
@@ -209,7 +211,7 @@ console.log("\nvaria = " + varia + " variatwo = " + variatwo)
 /*Las variables que parecen ser globales implícitas pueden ser referencias a variables 
 en un ámbito de función externo:*/
 var assign0 = 0;
-console.log("\n" + typeof assign3);
+console.log("\nassign3 = " + typeof assign3);
 
 function aFunc() { 
     var assign2 = 2;
@@ -237,4 +239,4 @@ const result = /(a+)(b+)(c+)/.exec("aaabcc");
 // var [,a, b, c] = result;
 // console.log("\n" + a, b, c);
 
-console.log(result);
+console.log("Result = " + result);

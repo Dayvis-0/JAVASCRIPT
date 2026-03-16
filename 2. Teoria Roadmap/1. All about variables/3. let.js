@@ -1,5 +1,5 @@
 /*La declaracion let declara variables locales reasignables y con alcance de 
-bloque, inicializando opcionalmente cada una de ellas con un valor
+bloque, inicializando opcionalmente cada una de ellas con un valor.
 Sintaxis: 
 let name1;
 let name1 = value1;
@@ -12,19 +12,19 @@ let x = 1;
 if (x === 1) {
     let x = 2;
 
-    console.log("From function "+ x);
+    console.log("From function " + x);
 }
 
-console.log("From global "+ x);
+console.log("From global " + x);
 
 /*El alcance de una variable declarada con let es una de las siguientes sintaxis 
-entre llaves que contiene más estrechamente la declaracion let:
+entre llaves que contiene más estrechamente la declaración let:
 - Declaracion de bloque
 - Declaracion switch
 - Declaracion try...catch
 - Cuerpo de una de las declaraciones for, si let esta en el encabezado de la declaracion
-- Cuerpo de una funcion
-- Bloque de inicializacion estatica
+- Cuerpo de una función
+- Bloque de inicialización estatica
 
 O si ninguna de las anteriores aplica:
 - El modulo actual, para el codigo que se ejecuta en modo modulo
@@ -43,12 +43,12 @@ donde se declara e inicializa la variable*/
     let foo = 2; // End to TDZ (for foo)
 }
 
-/*El termino "temporal" se utiliza porque la zona depende del orden de ejecucion 
-(tiempo) y no del orden de escritura del codigo (posicion). Por ejemplo, el siguiente 
+/*El termino "temporal" se utiliza porque la zona depende del orden de ejecución 
+(tiempo) y no del orden de escritura del código (posicion). Por ejemplo, el siguiente 
 codigo funciona porque, aunque la funcion que usa la variable "let" aparece antes 
 de que se declare la variable, se llama fuera de la TDZ*/
 {
-    const func = () => console.log(letVar); 
+    const func = () => console.log("letVar = " + letVar); 
 
     let letVar = 1;
 
@@ -149,8 +149,8 @@ letTest();
 var xVariable = "global";
 let yVariable = "global";
 
-console.log("\nxVariable = " + this.xVariable);
-console.log("yVariable = " + this.yVariable);
+console.log("\nvar Variable = " + this.xVariable);
+console.log("let Variable = " + this.yVariable);
 
 //El siguiente código genera un ReferenceError en la línea mostrada:
 function test() {
