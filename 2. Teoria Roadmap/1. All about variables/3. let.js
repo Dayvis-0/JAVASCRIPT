@@ -165,7 +165,7 @@ test();
 let n de n.a ya está dentro del ámbito del bloque del bucle for...of. Por lo tanto, el 
 identificador n.a se resuelve como la propiedad a del objeto n, ubicada en la primera 
 parte de la instrucción (let n). Esta aún se encuentra en la zona muerta temporal, ya que
- su declaración no se ha alcanzado ni terminado.*/
+su declaración no se ha alcanzado ni terminado.*/
 function go(n) {
     // n aqui esta definido
     console.log("\n");

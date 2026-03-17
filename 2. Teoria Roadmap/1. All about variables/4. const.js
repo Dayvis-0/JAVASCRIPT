@@ -25,8 +25,8 @@ console.log(number);
 misma declaracion, (Esto tiene sentido, ya que no se puede modificar posteriormente.*/
 // constt FOO;
 
-/*Las constantes se pueden declarar con mayusculas o minusculas, pero una convencion 
-comun es utilizar todas las letras mayusculas, especialmente para las primitivas por 
+/*Las constantes se pueden declarar con mayúsculas o minusculas, pero una convención 
+común es utilizar todas las letras mayúsculas, especialmente para las primitivas por 
 que son verdaderamente inmutables.*/
 const MY_FAV = 7;
 
@@ -45,10 +45,10 @@ if (MY_FAV_ONE === 7) {
 console.log(MY_FAV_ONE);
 
 /*const tambien funciona con objetos, matrices y arrays. Intentar sobrescribir el 
-objeto genera el error "Asignacion a variable constante"*/
+objeto genera el error "Asignación a variable constante"*/
 const MY_OBJECT = { key: "value"};
 // MY_OBJECT = { OTHER_KEY: "value"};
-// Sin embargo, las claves de objeto no estan protegidas, por lo que la siguiente declaracion 
+// Sin embargo, las claves de objeto no estan protegidas, por lo que la siguiente declaración 
 // ejecuta sin problemas
 MY_OBJECT.key = "otherValue";
 console.log("\n");

@@ -7,11 +7,29 @@
         <title>const</title>
         <style>
             :root {
+                padding: 100px;
                 color-scheme: light dark;
+            }
+
+            code {
+                background-color: light-dark(#edeef0, #2d3034);
+                padding: .125em .25em;
+                border-radius: 0.25rem;
             }
         </style>
     </head>
     <body>
+        <h1>const</h1>
+        <p>
+            The <strong><code>const</code></strong> declaration declares block-scoped local variables. 
+            The value of a constant can't be changed through reassignment using the assignment operator, 
+            but if a constant is an object, its properties can be added, updated, or removed.
+        </p>
+        <p>Enter the console to see the usage of var</p>
+        <p>
+            Extracted from: 
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">MDN const</a>
+        </p>
         <script src="4. const.js"></script>
     </body>
 </html>
