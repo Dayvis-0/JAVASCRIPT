@@ -1,6 +1,8 @@
 /*lo que sucede allí es que siempre que tienes un conjunto de corchetes rizados como la declaración if, es 
 lo que se conoce como bloque.*/
 
+// Example 1
+
 if (1 === 1) {
     // const cool1 = true;
 }
@@ -14,27 +16,51 @@ if (1 === 1) {
 if (1 === 1) {
     var cool3 = true;
 }
-console.log(cool3);
+
+console.log("with var cool3 = " + cool3);
+
+// Example 2
 
 let cool4;
+
 if (1 === 1) {
     cool4 = true;
 }
-console.log(cool4);
+
+console.log("with let out cool4 = " + cool4);
+
 /*Lo que esto hace es crear la variable en el ámbito superior (en este ejemplo es una variable global,
-pero si se creara dentro de una funcioón, tendria alcance de función)*/
+pero si se creara dentro de una función, tendria alcance de función).*/
+
+// Example 3
+
 function isCool(name) {
     let cool5;
 
     if (name === 'wes') {
-        const cool5 = false;
+        cool5 = true;
     }
 
-    console.log(cool5);
+    console.log("from isCool cool5 = " + cool5);
     return cool5;
 }
 
 isCool('wes');
+
+// Example 4
+
+function isCool1(name) {
+    let cool6;
+
+    if (name === 'wes') {
+        const cool6 = false;
+    }
+
+    console.log("from isCool1 cool6 = " + cool6);
+    return cool6;
+}
+
+isCool1('wes');
 
 console.log('\n');
 for (var i=0; i<10; i++) {
