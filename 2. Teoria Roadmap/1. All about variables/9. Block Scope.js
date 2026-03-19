@@ -1,5 +1,5 @@
-/*lo que sucede allí es que siempre que tienes un conjunto de corchetes rizados como la declaración if, es 
-lo que se conoce como bloque.*/
+/*lo que sucede allí es que siempre que tienes un conjunto de corchetes rizados 
+como la declaración if, es lo que se conoce como bloque.*/
 
 // Example 1
 
@@ -29,8 +29,8 @@ if (1 === 1) {
 
 console.log("with let out cool4 = " + cool4);
 
-/*Lo que esto hace es crear la variable en el ámbito superior (en este ejemplo es una variable global,
-pero si se creara dentro de una función, tendria alcance de función).*/
+/*Lo que esto hace es crear la variable en el ámbito superior (en este ejemplo es una 
+variable global, pero si se creara dentro de una función, tendria alcance de función).*/
 
 // Example 3
 
@@ -62,28 +62,34 @@ function isCool1(name) {
 
 isCool1('wes');
 
-console.log('\n');
+// Example 5
+
 for (var i=0; i<10; i++) {
-    console.log(i);
+    console.log("for i = " + i);
 }
-console.log(i);
+
+console.log("i = " + i);
+
+// Example 6
 
 /*Las variables var no tiene alcance de bloque, tiene alcance de función*/
-console.log('\n');
-function isCool1(name) {
+function isCool2(name) {
 
     if (name === 'wes') {
         var cool6 = false;
     }
 
-    console.log(cool6);
+    console.log("from isCool2 cool6 = " + cool6);
     return cool6;
 }
 
-isCool1('wes');
+isCool2('wes');
 
-/*Si declaras var dentro de un bloque como un if, for o wwhile, no se queda dentro del blque, sino
-que "se escapa" al alcance de la función o global*/
+/*Si declaras var dentro de un bloque como un if, for o wwhile, no se queda dentro 
+del blque, sino que "se escapa" al alcance de la función o global
+
+Example 7*/
+
 const dog = 'snickers';
 
 function logDog() {

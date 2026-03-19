@@ -1,15 +1,18 @@
 /* El objeto String se utiliza para representar y manipular una secuencia de caracteres
-Las cadenas se pueden crear como primitivas, a partir de cadenas literales o como objetos, utilizando el contructor String()*/
+Las cadenas se pueden crear como primitivas, a partir de cadenas literales o 
+como objetos, utilizando el contructor String()*/
+
 const string1 = "A string primitive";
 const string2 = 'Also a string primitive';
 const string3 = `Yet another string primitive`;
 const string4 = new String("A string primitive");
 
 /*Acceso a caracteres
-Hay dos maneras de acceder a un carácter individual en una cadena. La primera es el método charAt():*/
+Hay dos maneras de acceder a un carácter individual en una cadena. La primera es el 
+método charAt():*/
 console.log("cat".charAt(1));
-// La otra forma es tratar la cadena como un objeto similar a una matriz, donde los caracteres individuales corresponden
-// a un indice numérico
+// La otra forma es tratar la cadena como un objeto similar a una matriz, donde los 
+// caracteres individuales corresponden a un indice numérico
 console.log("cat"[1]); 
 
 /*Comparación de cadenas
@@ -25,9 +28,11 @@ if (a < b) {
     console.log(`${a} and ${b} are equal.`);
 }
 
-/*Tenga en cuenta que todos los operadores de comparación, incluidos === y ==, distinguen entre mayúsculas y 
-minúsculas en las cadenas. Una fomra común de comparar cadenas sin distinción entre mayúsculas y minúsculas
-es convertir ambas a mayúsculas o minúsculas antes de compararlas*/
+/*Tenga en cuenta que todos los operadores de comparación, incluidos === y ==, 
+distinguen entre mayúsculas y minúsculas en las cadenas. Una fomra común de comparar 
+cadenas sin distinción entre mayúsculas y minúsculas es convertir ambas a mayúsculas 
+o minúsculas antes de compararlas*/
+
 console.log('\n');
 function areEqualCaseInsensivite(str1, str2) {
     return str1.toUpperCase() === str2.toUpperCase();
@@ -44,9 +49,11 @@ const areEqualInLowerCase = (str1, str2) =>
 console.log(areEqualInUpperCase("ß", "ss")); // true, deberia ser false
 console.log(areEqualInUpperCase("ı", "I")); // false, deberia ser true
 
-/*Una solución robusta y que tiene en cuenta la configuració regional para probar la igualdad sin distinción
-entre mayúsculas y minúsculas es utilizar la API Intl.Collator o el método localeCompare() de la cadena
-(comparten la misma interfaz) con la opción de sensibilidad establecida en "accent" o "base"*/
+/*Una solución robusta y que tiene en cuenta la configuració regional para probar 
+la igualdad sin distinción entre mayúsculas y minúsculas es utilizar la API 
+Intl.Collator o el método localeCompare() de la cadena (comparten la misma interfaz) 
+con la opción de sensibilidad establecida en "accent" o "base"*/
+
 const areEqual = (str1, str2, locale = "en-US") =>
     str1.localeCompare(str2, locale, { sensitivity: "accent"}) === 0;
 
@@ -55,11 +62,14 @@ console.log(areEqual("ß", "ss", "de"));
 console.log(areEqual("ı", "I", "tr"));
 
 /*Primitivas de cadena y objetos de cadena
-Tenga en cuenta que JS distingue entre objetos de cadena y valores de cadena primitivos. Las cadenas literales
-(indicadas mediante comillas dobles o simples) y las cadenas devueltas por llamadas a String en un contexto sin 
-constructor (es decir, llamadas sin usar la palabra clave "new") son cadenas  primitivas. En contextos donde se 
-invoca un método en una cadena primitiva o se busca una propiedad, JavaScript encapsulará automáticamente la 
-cadena primitiva y llamará al método o realizará la búsqueda de la propiedad en el objeto contenedor.*/
+Tenga en cuenta que JS distingue entre objetos de cadena y valores de cadena primitivos. 
+Las cadenas literales (indicadas mediante comillas dobles o simples) y las cadenas 
+devueltas por llamadas a String en un contexto sin constructor (es decir, llamadas 
+sin usar la palabra clave "new") son cadenas  primitivas. En contextos donde se invoca 
+un método en una cadena primitiva o se busca una propiedad, JavaScript encapsulará 
+automáticamente la cadena primitiva y llamará al método o realizará la búsqueda de 
+la propiedad en el objeto contenedor.*/
+
 const strPrim = "foo"; // Un literal is un string primitivo
 const strPrim2 = String(1); // Forzando a entrar en la cadena primitiva "1"
 const strPrim3 = String(true); // Forzando a entrar en la cadena primitiva "true"
@@ -71,9 +81,10 @@ console.log(typeof strPrim3);
 console.log(typeof strObj);
 // Advertencia: rara vez deberías usar String como constructor.
 
-/*Las primitivas de cadena y los objetos String también generan resultados diferentes al usar eval(). las 
-primitivas pasadas a eval se tratan como código fuente; los objetos String se tratan como todos los demás
-objetos, devolviendo el objeto. Por ejemplo:*/
+/*Las primitivas de cadena y los objetos String también generan resultados diferentes 
+al usar eval(). las  primitivas pasadas a eval se tratan como código fuente; los objetos 
+String se tratan como todos los demás objetos, devolviendo el objeto. Por ejemplo:*/
+
 const s1 = "2 + 2"; // Crea una cadena primitiva
 const s2 = new String("2 + 2"); // Crea un objeto String 
 console.log('\n'); 
@@ -82,7 +93,9 @@ console.log(eval(s2));
 console.log(eval(s2.valueOf()));
 
 /*Coerción
-Significa que JS convierte automáticamente un tipo de dato en otro cuando una operación lo necesita*/
+Significa que JS convierte automáticamente un tipo de dato en otro cuando una operación 
+lo necesita*/
+
 console.log('\n');
 console.log(String("hola"));
 console.log(String(undefined));
@@ -121,12 +134,13 @@ console.log("" + 123);
 console.log("\n");
 console.log("😄".split(""));
 console.log('😄');
-/* Operador spread ... -> Sirve para expandir o distribuir los elementos de un objeto iterable, como un arreglo 
-o una cadena en lugares donde se esperan multiples elementos*/ 
+/* Operador spread ... -> Sirve para expandir o distribuir los elementos de un objeto 
+iterable, como un arreglo o una cadena en lugares donde se esperan multiples elementos*/ 
 console.log([..."👉🏿"]); 
 
 /* Metodos estaticos
-Devuelve una cadena creada a partir de la secuencia especidificada de unidades de código UTF-16*/
+Devuelve una cadena creada a partir de la secuencia especidificada de unidades de 
+código UTF-16*/
 console.log("\n");
 console.log(String.fromCharCode(189, 43, 190, 61));
 //Devuelve una candena creada a partir de la secuencia especificada de puntos de código
@@ -141,17 +155,18 @@ console.log(`${str5} ${str5.length}`);
 
 /*Metodos de instancia
 
-Devuelve el carácter (examctamente una unidad de codigo UTF-16) en el indice especificado. Acepta enteros negativos,
-que contengan hacia atrás desde el último carácter de la cadena*/
+Devuelve el carácter (examctamente una unidad de codigo UTF-16) en el indice especificado. 
+Acepta enteros negativos, que contengan hacia atrás desde el último carácter de la cadena*/
 console.log("\n");
 const sentence = "The quick browm fox jumps over the lazy dog.";
 console.log(`An index of -1 returns the character ${sentence.at(-1)}`)
-// Devuelve el cáracter (exactamente una unidad de codigo UTF-16) en el indice especificado solo acepta indices positivos
+// Devuelve el cáracter (exactamente una unidad de codigo UTF-16) en el indice especificado 
+// solo acepta indices positivos
 console.log(`The character at index 1 is ${sentence.charAt(1)}`);
 // Devuelve un número que es el valor de la unidad de código UTF-16 en el indice dado
 console.log(`Character  code ${sentence.charCodeAt(5)} is equal to ${sentence.charAt(5)}`);
-// Devuelve un número entero no negativo que es el valor del punto de código codificado en UTF-16 que 
-// comienza en la posición especificada
+// Devuelve un número entero no negativo que es el valor del punto de código codificado 
+// en UTF-16 que comienza en la posición especificada
 const icons = "☃★♲";
 console.log(icons.codePointAt(1));
 // Combina el texto de dos (o más) cadenas y devuelve una nueva cadena

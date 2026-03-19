@@ -11,7 +11,8 @@ function go1() {
 
 go1();
 console.log(age1);
-// console.log(hair); Esto genera un error de referencia, porque hair tien un alcance de función
+// console.log(hair); Esto genera un error de referencia, porque hair tien un alcance }
+// de función
 
 // Example 2
 

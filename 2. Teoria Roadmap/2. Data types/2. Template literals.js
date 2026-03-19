@@ -1,10 +1,13 @@
-/*Los literales de plantilla son literales delimitados con caracteres de comillas invertidas (`), lo que  permite cadenas 
-de varias lineas, interpolación de cadenas con expresiones integradas y construcciones especiales llamadas plantillas 
-etiquetadas.
-Los literales de plantilla a veces se denominan informalemente cadenas de plantilla, ya que se utilizan principalmente 
-para la interpolacion de cadenas (para crear mediante cadenas la sustitución de marcadores de posición). Sin embarg, un 
-literal de plantilla de etiquetado no puede generar una cadena; se puede usar con una función de etiqueta personalizada
-para realizar las operaciones que se deseeen en las diferentes parte del literal de plantilla.
+/*Los literales de plantilla son literales delimitados con caracteres de comillas 
+invertidas (`), lo que  permite cadenas de varias lineas, interpolación de cadenas 
+con expresiones integradas y construcciones especiales llamadas plantillas etiquetadas.
+Los literales de plantilla a veces se denominan informalemente cadenas de plantilla, 
+ya que se utilizan principalmente para la interpolacion de cadenas (para crear mediante 
+cadenas la sustitución de marcadores de posición). Sin embarg, un literal de plantilla 
+de etiquetado no puede generar una cadena; se puede usar con una función de etiqueta 
+personalizada para realizar las operaciones que se deseeen en las diferentes parte del 
+literal de plantilla.
+
 Sintaxis:
 `string text`
 
@@ -15,9 +18,10 @@ Sintaxis:
 
 tagFunction`string text ${expression} string text`
 
-Para escapar de una comilla invertida en un literal de plantilla, coloque una barra invertida (\) antes de la 
-comilla invertida. Escapar un carácter significa decirle al lenguaje que no lo interprete con su signiificado 
-habitual, sino que lo trate como un texto literal*/
+Para escapar de una comilla invertida en un literal de plantilla, coloque una barra 
+invertida (\) antes de la comilla invertida. Escapar un carácter significa decirle al 
+lenguaje que no lo interprete con su signiificado habitual, sino que lo trate como un 
+texto literal*/
 if (`\`` === "`") {
     console.log(true);
 }
@@ -33,15 +37,17 @@ Usando literales de plantilla, puedes hacer una cadena de varias lineas con esto
 console.log("\n");
 console.log(`string text line 1
 string text line 2`);
-/*Al igual que los literales de cadena normales, puede escribir una cadena de una sola linea en varias lineas para facilitar
-la lectura del código fuente, escapando la nueva linea con una barra invertida (\)*/
+/*Al igual que los literales de cadena normales, puede escribir una cadena de una sola 
+linea en varias lineas para facilitar la lectura del código fuente, escapando la nueva 
+linea con una barra invertida (\)*/
 console.log("\n");
 console.log(`string terxt line 1 \ 
 string terxt line 2`);
 
 /*Interpolación de cadenas
-Con los literales de plantilla, puede evitar el operador de concatenación (y mejorar la legibilidad de su código) al usar 
-marcadores de posición con el formato $[expresion} para realizar sustituciones para expresiones integradas.*/
+Con los literales de plantilla, puede evitar el operador de concatenación (y mejorar la 
+legibilidad de su código) al usar marcadores de posición con el formato $[expresion} para 
+realizar sustituciones para expresiones integradas.*/
 const a = 5;
 const b = 10;
 console.log(`
@@ -49,11 +55,12 @@ Fifteen is ${a + b} and not ${2 * a + b}`);
 
 
 /*Plantillas de anidamiento
-En ciertos casos, anidar una plantilla es la forma mas sencilla (y quizás más legible) de tener cadenas  
-configurables. Dentro de una plantilla delimitada por comillas invertidas, es sencillo permitir comillas
-invertidas internas usándolas dentro de un marcador de poosición ${expresion} dentro de una plantilla.
-Por ejemplo, sin literales de plantilla, si quisiera devolver un valor predeterminado en función
-de una condición particular, podria hacer lo siguiente*/
+En ciertos casos, anidar una plantilla es la forma mas sencilla (y quizás más legible) 
+de tener cadenas configurables. Dentro de una plantilla delimitada por comillas 
+invertidas, es sencillo permitir comillas invertidas internas usándolas dentro de un 
+marcador de posición ${expresion} dentro de una plantilla. Por ejemplo, sin literales 
+de plantilla, si quisiera devolver un valor predeterminado en función de una condición 
+particular, podria hacer lo siguiente*/
 function isLargeScreen() { return false; }
 const item =  {
     isCollapsed: true
@@ -78,10 +85,11 @@ const classes3 = `header ${
 console.log('\n' + classes3);
 
 /*Plantillas etiquetadas
-Una forma mas avanzada de literales de plantilla son las plantillas etiquetadas. Las etiquetas permiten analizar 
-literales de plantilla con función. El primer argumento de una función de etiqueta contiene una matriz de 
-valores de cadena. Los demas argumentos estan relacionados con las expresiones. El nombre de la función
-utilizada para la etiqueta puede ser el que desees*/
+Una forma mas avanzada de literales de plantilla son las plantillas etiquetadas. Las 
+etiquetas permiten analizar literales de plantilla con función. El primer argumento 
+de una función de etiqueta contiene una matriz de valores de cadena. Los demas argumentos 
+estan relacionados con las expresiones. El nombre de la función utilizada para la 
+etiqueta puede ser el que desees*/
 const person = "Mike";
 const age = 28;
 
@@ -99,8 +107,9 @@ function myTag(strings, personExp, ageExp) {
 const outoupt = myTag`That ${person} is a ${age}.`;
 console.log('\n' + outoupt);
 
-/*La etiqueta no tiene que ser un identificador simple. Puede usar cualquier exppresión con precedencia mayor a 16,
-lo que concluye acceso a propiedades, llamadas a funciones, nuevas expresiones o incluso otro literal de plantilla*/
+/*La etiqueta no tiene que ser un identificador simple. Puede usar cualquier expresión 
+con precedencia mayor a 16, lo que concluye acceso a propiedades, llamadas a funciones, 
+nuevas expresiones o incluso otro literal de plantilla*/
 console.log("\n");
 console.log`Hello`;
 console.log.bind(1,2)`Hello`;
@@ -139,8 +148,9 @@ console.log('\n');
 console.log(t3Closure("foo", {name: "MDN", age: 30}));
 console.log(t3Closure({name: "MDN", age: 30}));
 
-/*Para cualquier expresion literal de plantilla etiquetada en particular, la función de etiqueta siempre se 
-llamará con exactamente la misma matriz literal, sin importar cuántas veces se evalúe el literal*/
+/*Para cualquier expresion literal de plantilla etiquetada en particular, la función 
+de etiqueta siempre se llamará con exactamente la misma matriz literal, sin importar 
+cuántas veces se evalúe el literal*/
 const callHistory = [];
 
 function tag(strings, ...values) {
@@ -156,30 +166,32 @@ console.log(evaluateLiteral() === evaluateLiteral());
 console.log(callHistory[0] === callHistory[1]);
 
 /*Raw strings
-La propiedad especial raw, disponible en el primer argumento de la función de etiqueta, le permite acceder a las
-cadenas sin procesar tal como fueron ingresadas, sin procesar secuancias de escape*/
+La propiedad especial raw, disponible en el primer argumento de la función de etiqueta, 
+le permite acceder a las cadenas sin procesar tal como fueron ingresadas, sin procesar 
+secuancias de escape*/
 function tagOne(strings) {
     console.log(strings.raw[0]);
 }
 
 tagOne`string text line 1 \n string text line 2`;
 
-// Ademas, existe el método String.raw() para crear cadenas sin procesar tal como lo haria la función de 
-// plantilla predeterminada y la concatención de cadenas
+// Ademas, existe el método String.raw() para crear cadenas sin procesar tal como lo 
+// haria la función de plantilla predeterminada y la concatención de cadenas
 const str = String.raw`Hi\n${2 + 3}!`;
 console.log("\n");
 console.log(str.length);
 console.log(Array.from(str).join(","));
 
-// identity imita a String.raw pero con strings procesados, por eso el \n si hace salto de linea
+// identity imita a String.raw pero con strings procesados, por eso el \n si hace 
+// salto de linea
 const identity = (strings, ...values) => 
     String.raw({ raw: strings }, ...values);
 
 console.log('\n');
 console.log(identity`Hi\n${2+3}!`);
 
-// Esto es util para muchas herramientas que dan un tratamiento especial a los literales etiquetados
-// con un nombre particular
+// Esto es util para muchas herramientas que dan un tratamiento especial a los 
+// literales etiquetados con un nombre particular
 const html = (strings, ...values) => String.raw({ raw: strings }, ...values);
 const doc = html`<!doctype html>
     <html lang="en-US">
