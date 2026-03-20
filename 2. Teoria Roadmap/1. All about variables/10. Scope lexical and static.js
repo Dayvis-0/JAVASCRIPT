@@ -8,7 +8,7 @@ funciones, no donde se ejecutan.*/
 const dog = 'snickers';
 
 function logDog() {
-    console.log(dog);
+    console.log("from logDog " + dog);
 }
 
 function go() {
@@ -23,7 +23,7 @@ go();
 const dog1 = 'snickers';
 
 function logDog1(dog1) {
-    console.log(dog1);
+    console.log("from logDog1 " + dog1);
 }
 
 function go1() {
@@ -35,15 +35,16 @@ go1();
 
 // Example 3
 
-function logDog2(dog2){
-    const dog2 = whateverYouPassedInAsTheFirstArgumentToTheFunction;
-    console.log(dog2)
+function logDog2(dog){ // is declared here
+    // const dog = whateverYouPassedInAsTheFirstArgumentToTheFunction; Error it was already declared
+    console.log("form logDog2 " + dog)
 }
 
 function go2() {
     const dog = 'sunny';
-    logDog(dog);
+    logDog2(dog);
 }
+
 
 go2();
 
@@ -56,4 +57,5 @@ function sayHi(name) {
     yell();
 }
 
-// yell();
+sayHi("Hello");
+// yell(); Esta funciona esta solo en el scope de sayHi no esta en el scope global
