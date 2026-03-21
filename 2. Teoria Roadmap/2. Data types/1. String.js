@@ -204,20 +204,20 @@ console.log(
 una lista ordenada de subcadenas buscando el patrón, coloca estas subcadenas en 
 un array y devuelve el array.*/
 const splitEx = "2026-03-26".split("-");
-console.log("split - \"2026-03-26\".split(\"-\");");
+console.log("\nsplit() - \"2026-03-26\".split(\"-\");");
 console.log(splitEx);
 
 /*El método trim() de los valores String elimina los espacios en blanco de ambos
 extremos de esta cadena y devuelve una nueva cadena, sin modificar la cadena original.*/
 const trimEx = "  Hello  ";
-console.log("trim - \"  Hello  \".trim();");
+console.log("\ntrim() - \"  Hello  \".trim();");
 console.log(trimEx.trim());
 
 /*El método includes() de los valores String realiza una búsqueda que distingue entre 
 mayúsculas y minúsculas para determinar si una cadena dada se puede encontrar dentro 
 de esa cadena, devolviendo verdadero o falso según corresponda.*/
 const includesEx = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes";
-console.log("includes - \"https://developer.mozilla.org\".includes(\"https\");");
+console.log("\nincludes() - \"https://developer.mozilla.org\".includes(\"https\");");
 console.log(includesEx.includes("https"));
 
 /*El método replace() de los valores String devuelve una cadena con una, algunas o todas 
@@ -227,11 +227,103 @@ El patrón puede ser una cadena de texto o una expresión regular, y el reemplaz
 ser una cadena de texto o una función que se ejecuta para cada coincidencia.*/
 
 const paragraph = "I think Ruth's dog is cuter than your dog!";
-console.log("replace - \"I think Ruth's dog is cuter than your dog!\".replace(\"Ruth's\", \"my\");");
+console.log("\nreplace() - \"I think Ruth's dog is cuter than your dog!\".replace(\"Ruth's\", \"my\");");
 console.log(paragraph.replace("Ruth's", "my"));
 
 const regex = /dog/i;
 console.log(paragraph.replace(regex, "ferret"));
 
+/*El método replaceAll() de los valores String devuelve una nueva cadena con todas las 
+coincidencias de un patrón reemplazadas por un reemplazo.*/
 
-/**/
+console.log("\nreplaceAll;");
+console.log(paragraph.replaceAll("dog", "monkey"));
+
+const regex1 = /dog/gi;
+console.log(paragraph.replaceAll(regex1, "ferret"));
+
+//El método toLoverCase() de los valores String devuelve esta cadena convertida a minúsculas.
+const sentence2 = "The quick brown fox jumps over the lazy dog.";
+
+console.log("\ntoLowerCase() - The quick brown fox jumps over the lazy dog;")
+console.log(sentence2.toLowerCase());
+
+//El método toUpperCase() de los valores String devuelve esta cadena convertida a mayúsculas.
+console.log("\ntoUpperCase() - The quick brown fox jumps over the lazy dog;")
+console.log(sentence2.toUpperCase());
+
+/*El método slice() de los valores String extrae una sección de esta cadena y la 
+devuelve como una nueva cadena, sin modificar la cadena original.*/
+const str = "The quick brown fox jumps over the lazy dog.";
+
+console.log("\nslice() - The quick brown fox jumps over the lazy dog;")
+
+console.log("str.slice(31) = " + str.slice(31));
+console.log("str.slice(4, 9) = " + str.slice(4, 9));
+console.log("str.slice(-4) = " + str.slice(-4));
+console.log("str.slice(-9, -5) = " + str.slice(-9, -5));
+
+/*El método substring() de los valores String devuelve la parte de esta cadena desde el 
+índice inicial hasta el índice final, sin incluirlo, o hasta el final de la cadena
+si no se proporciona ningún indice final.*/
+const str1 = "Mozilla";
+
+console.log("\nsubstring() - Mozilla;");
+console.log("str1.substring(1, 3) = " + str1.substring(1, 3));
+console.log("str1.substring(2) = " + str1.substring(2));
+
+/*El método startsWith() de los valores String determina si esta cadena comienza con los
+caracteres de una cadena especificada, devolviendo verdadero o falso según corresponda.*/
+const str2 = "Saturday night plans";
+
+console.log("\nsubstring() - Saturday night plans;");
+console.log("str2.startsWith(\"Sat\") = " + str2.startsWith("Sat"));
+console.log("str2.startsWith(\"Sat\", 3) = " + str2.startsWith("Sat", 3));
+
+/*El método endsWith() de los valores String determina si una cadena termina, con los 
+caracteres de esta cadenal, devolviendo verdadero o falso según corresponda.*/
+const str3 = "Cats are the best!";
+
+console.log("\nendsWith() - Cats are the best!;");
+console.log("str3.endsWith(\"best!\") = " + str3.endsWith("best!"));
+console.log("str3.endsWith(\"best\") = " + str3.endsWith("best"));
+console.log("str3.endsWith(\"best!\", 17) = " + str3.endsWith("best", 17));
+
+/*El método indexOf() de los valores String busca en esta cadena y devuelve el índice de 
+la primera aparición de la subcadena especificada. Acepta una posición inicial opcional y 
+devuelve la primera aparición de la subcadena especificada en un índice mayor o igual al
+número especificado.*/
+const paragraph1 = "I think Ruth's dog is cuter than your dog!";
+const searchTerm = "dog";
+const indexOfFirst = paragraph1.indexOf(searchTerm);
+
+console.log("\nindexOf() - I think Ruth's dog is cuter than your dog!");
+console.log(`The index of the first "${searchTerm}" is ${indexOfFirst}`);
+console.log(
+    `The index of the second "${searchTerm}" is ${paragraph1.indexOf(
+        searchTerm,
+        indexOfFirst + 1,
+    )}`,
+);
+
+/*El método lastIndexOf() de los valores String busca en esta cadena y devuelve el 
+índice de la últimao aparición de la subcadena especificada.*/
+const paragraph2 = "I think Ruth's dog is cuter than your dog!";
+const searchTerm1 = "dog";
+
+console.log("\nlastIndexOf() - I think Ruth's dog is cuter than your dog!");
+console.log(`Index of the last "${searchTerm1}" is ${paragraph2.lastIndexOf(searchTerm1)}`,);
+/*El método match() de los valores String recupera el resultado de comparar esta 
+cadena con una expresión regular.*/
+const paragraph3 = "The quick brown fox jumps over the lazy dog. It barked.";
+const regex2 = /[A-Z]/g;
+const found = paragraph3.match(regex2);
+
+console.log("\nmatch() - The quick brown fox jumps over the lazy dog. It barked.");
+console.log(found);
+/*La propiedad de datos length de un valor String contiene la longitud de la cadena en 
+unidades de código UTF-16.*/
+const str6 = "Life, the universe and everything. Answer:";
+
+console.log("\nlenght - Life, the universe and everything. Answer:");
+console.log(`${str6} - ${str6.length}`);
