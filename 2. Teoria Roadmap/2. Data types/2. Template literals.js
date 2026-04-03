@@ -80,7 +80,7 @@ classes1 += isLargeScreen()
       : " icon-expander2";
 
 // Con una plantilla literal pero sin anidación podrias hacer esto:
- const classes2 = `header ${
+const classes2 = `header ${
     isLargeScreen() ? "" : item.isCollapsed ? "icon-expander1" : "icon collapser2"
 }`;
 
@@ -89,14 +89,15 @@ const classes3 = `header ${
     isLargeScreen() ? "" : `icon - ${item.isCollapsed ? "expander1" : "collapser"}`
 }`;
 
-console.log("classes2 = " + classes2 + " | classes3 = " + classes3);
+console.log("classes2 = " + classes2);
+console.log("classes3 = " + classes3);
 
 /*Plantillas etiquetadas
 Una forma mas avanzada de literales de plantilla son las plantillas etiquetadas. Las 
 etiquetas permiten analizar literales de plantilla con función. El primer argumento 
 de una función de etiqueta contiene una matriz de valores de cadena. Los demas argumentos 
 estan relacionados con las expresiones. El nombre de la función utilizada para la 
-etiqueta puede ser el que desees*/
+etiqueta puede ser el que desees.*/
 console.log("\nPlantillas etiquetadas");
 
 const person = "Mike";
@@ -205,7 +206,7 @@ const html = (strings, ...values) => String.raw({ raw: strings }, ...values);
 const doc = html`<!doctype html>
     <html lang="en-US">
         <head>
-            <title>Hello</title>
+            <title>Hello</title>    
         </head>
         <body>
             <h1>Hello world!</h1>

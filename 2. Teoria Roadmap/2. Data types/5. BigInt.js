@@ -1,13 +1,14 @@
-/*Los valores BigInit representan valores enteros que son demasiados altos o demasiados bajos para
-ser representados por el número primitivo.*/
+/*Los valores BigInit representan valores enteros que son demasiados altos 
+o demasiados bajos para ser representados por el número primitivo.*/
 const preInteger = 9007199254740991n;
 console.log(`BigInt(preInteger) -> ${BigInt(preInteger)}`);
 console.log(`BigInt(0b11111111111111111111111111111111111111111111111111111) -> ${BigInt(0b11111111111111111111111111111111111111111111111111111)}`);
 console.log(`typeof 1n === "bigint" -> ${typeof 1n === "bigint"}`);
 console.log(`typeof BigInt("1") === "bigint" -> ${typeof BigInt("1") === "bigint"}`);
 /*Operadores
-La mayoria de los operadores admiten BigInits, sin embargo la mayoria no permite que los operandos
-sean de tipos mixtos: ambos operandos deben ser BigInt o ninguno*/
+La mayoria de los operadores admiten BigInits, sin embargo la mayoria no 
+permite que los operandos sean de tipos mixtos: ambos operandos deben ser 
+BigInt o ninguno*/
 const previousMaxSafe = BigInt(Number.MAX_SAFE_INTEGER);
 console.log(`previousMaxSafe + 1n -> ${previousMaxSafe + 1n}`);
 console.log(`previousMaxSafe + 2n -> ${previousMaxSafe + 2n}`);
@@ -31,9 +32,10 @@ if (0n) {
 }
 
 /* Uso dentro de JSON
-Usar JSON.stringify() con cualquier valor BigInt generará un TypeError, ya que los valores BigInt no se
-serializan en JSON por defecto. Por lo tanto, puede implementar su propio método toJSON() (que es uno de 
-los pocos casos en los que no se desaconseja explícitamente aplicar parches a objetos integrados):*/
+Usar JSON.stringify() con cualquier valor BigInt generará un TypeError, ya que 
+los valores BigInt no se serializan en JSON por defecto. Por lo tanto, puede 
+implementar su propio método toJSON() (que es uno de los pocos casos en los 
+que no se desaconseja explícitamente aplicar parches a objetos integrados):*/
 BigInt.prototype.toJSON = function () {
     return { $bigint: this.toString() };
 };
