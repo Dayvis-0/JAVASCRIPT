@@ -50,10 +50,10 @@ console.log(`The color of your car is: ${myCar.color}`);
 
 /* Usando el método Object.create()
 También se pueden crear objetos mediante el método Object.crate(). Este método 
-puede ser mmuy útil, ya que permite elegir el prototipo del objeto que se desea 
+puede ser muy útil, ya que permite elegir el prototipo del objeto que se desea 
 crear, sin necesidad del objeto que se desea crear, sin necesidad de definir una 
-función constructora*/ 
-console.log('\n');
+función constructora.*/ 
+console.log('\nUsando el método Object.create()');
 const Animal = {
     type: "Invertebrates",
     displayType() {
@@ -69,14 +69,15 @@ fish.type = "Fishes";
 fish.displayType();
 
 /*Objetos y propiedades
-Un objeto JS tiene propiedades asiciadas. Las propiedades de un objeto son 
-básicamente las mismas que las variable excepto que están asociadas a objetos, 
-no ámbitos. Las propiedades de un objeto definen sus caracteristicas*/
+Un objeto JS tiene propiedades asociadas. Las propiedades de un objeto son 
+básicamente las mismas que las variables excepto que están asociadas a objetos, 
+no ámbitos. Las propiedades de un objeto definen sus caracteristicas.*/
 const myCarOne = {
     make: "Ford",
     model: "Mustang",
     year: 1969,
 };
+
 /*Los nombres de propiedad distinguen entre mayúsculas y minúsculas. Los nombres 
 de propiedad solo pueden ser cadenas o símbolos; todas las claves se convierten 
 en cadenas, a menos que sean simbolos. Los indices de matriz son, de hecho, 
@@ -108,7 +109,7 @@ myObj[randOne] = "A random number is the key here";
 myObj[anotherObject] = "This key is object anotherObj";
 myObj[""] = "This key is an empty string";
 
-console.log('\n');
+console.log('\nNombres de las propiedades');
 console.log(myObj);
 console.log(myObj.myString);
 console.log('\n');
